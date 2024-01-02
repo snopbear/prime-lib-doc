@@ -1,0 +1,260 @@
+<p routerLink="/" class="hover:cursor-pointer">
+  <a
+    class="text-[var(--secondary-color-m)] block text-[14px] py-[15px] pr-[20px] pl-8 text-center font-black route"
+  >
+    Get Started
+  </a>
+</p>
+
+<p-accordion class="side-nav">
+  <!-- Components tab -->
+  <p-accordionTab
+    header="Components"
+    contentStyleClass="!bg-transparent !border-0"
+    headerStyleClass="!bg-transparent !border-0 focus:!shadow-none"
+  >
+    <ul class="m-0 p-0">
+      <li
+        *ngFor="let item of _navLinks.components"
+        class="m-0"
+        routerLinkActive="active font-bold"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a
+          class="text-[var(--secondary-color-m)] block text-[14px] font-normal py-[15px] pr-[20px] pl-8 hover:bg-[var(--primary-color)] hover:text-[var(--trinary--color-m)] route"
+          [routerLink]="item.route"
+          >{{ item.title }}</a
+        >
+      </li>
+    </ul>
+  </p-accordionTab>
+
+  <!-- Services tab -->
+  <p-accordionTab
+    header="Services"
+    contentStyleClass="!bg-transparent !border-0"
+    headerStyleClass="!bg-transparent !border-0 focus:!shadow-none"
+  >
+    <ul class="m-0 p-0">
+      <li
+        *ngFor="let item of _navLinks.services"
+        class="m-0"
+        routerLinkActive="active font-bold"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a
+          class="text-[var(--secondary-color-m)] block text-[14px] font-normal py-[15px] pr-[20px] pl-8 hover:bg-[var(--primary-color)] hover:text-[var(--trinary--color-m)] route"
+          [routerLink]="item.route"
+          >{{ item.title }}</a
+        >
+      </li>
+    </ul>
+  </p-accordionTab>
+
+  <!-- Pipes tab -->
+  <!-- <p-accordionTab
+    header="Pipes"
+    contentStyleClass="!bg-transparent !border-0"
+    headerStyleClass="!bg-transparent !border-0 focus:!shadow-none"
+  >
+    <ul class="m-0 p-0">
+      <li
+        *ngFor="let item of _navLinks.pipes"
+        class="m-0"
+        routerLinkActive="active font-bold"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a
+          [routerLink]="item.route"
+          class="text-[var(--secondary-color-m)] block text-[14px] font-normal py-[15px] pr-[20px] pl-8 hover:bg-[var(--primary-color)] hover:text-[var(--trinary--color-m)] route"
+          >{{ item.title }}</a
+        >
+      </li>
+    </ul>
+  </p-accordionTab> -->
+
+  <!-- Directives tab -->
+  <p-accordionTab
+    header="Directives"
+    contentStyleClass="!bg-transparent !border-0"
+    headerStyleClass="!bg-transparent !border-0 focus:!shadow-none"
+  >
+    <ul class="m-0 p-0">
+      <li
+        *ngFor="let item of _navLinks.directives"
+        class="m-0"
+        routerLinkActive="active font-bold"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a
+          class="text-[var(--secondary-color-m)] block text-[14px] font-normal py-[15px] pr-[20px] pl-8 hover:bg-[var(--primary-color)] hover:text-[var(--trinary--color-m)] route"
+          [routerLink]="item.route"
+          >{{ item.title }}</a
+        >
+      </li>
+    </ul>
+  </p-accordionTab>
+
+  <!-- Interceptors tab -->
+  <p-accordionTab
+    header="Interceptors"
+    contentStyleClass="!bg-transparent !border-0"
+    headerStyleClass="!bg-transparent !border-0 focus:!shadow-none"
+  >
+    <ul class="m-0 p-0">
+      <li
+        *ngFor="let item of _navLinks.interceptors"
+        class="m-0"
+        routerLinkActive="active font-bold"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a
+          [routerLink]="item.route"
+          class="text-[var(--secondary-color-m)] block text-[14px] font-normal py-[15px] pr-[20px] pl-8 hover:bg-[var(--primary-color)] hover:text-[var(--trinary--color-m)] route"
+          >{{ item.title }}</a
+        >
+      </li>
+    </ul>
+  </p-accordionTab>
+
+  <!-- External Packages tab -->
+  <p-accordionTab
+    header="External Packages"
+    contentStyleClass="!bg-transparent !border-0"
+    headerStyleClass="!bg-transparent !border-0 focus:!shadow-none"
+  >
+    <ul class="m-0 p-0">
+      <li
+        *ngFor="let item of _navLinks.externalPackages"
+        class="m-0"
+        routerLinkActive="active font-bold"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a
+          [routerLink]="item.route"
+          class="text-[var(--secondary-color-m)] block text-[14px] font-normal py-[15px] pr-[20px] pl-8 hover:bg-[var(--primary-color)] hover:text-[var(--trinary--color-m)] route"
+          >{{ item.title }}</a
+        >
+      </li>
+    </ul>
+  </p-accordionTab>
+
+  <!--Builder tab -->
+  <p-accordionTab
+    header="Assaf Builder"
+    contentStyleClass="!bg-transparent !border-0"
+    headerStyleClass="!bg-transparent !border-0 focus:!shadow-none"
+  >
+    <ul class="m-0 p-0">
+      <li
+        *ngFor="let item of _navLinks.builder"
+        class="m-0"
+        routerLinkActive="active font-bold"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a
+          [routerLink]="item.route"
+          class="text-[var(--secondary-color-m)] block text-[14px] font-normal py-[15px] pr-[20px] pl-8 hover:bg-[var(--primary-color)] hover:text-[var(--trinary--color-m)] route"
+          >{{ item.title }}</a
+        >
+      </li>
+    </ul>
+  </p-accordionTab>
+  <!-- Seo tab -->
+  <p-accordionTab
+    header="SEO"
+    contentStyleClass="!bg-transparent !border-0"
+    headerStyleClass="!bg-transparent !border-0 focus:!shadow-none"
+  >
+    <ul class="m-0 p-0">
+      <li
+        *ngFor="let item of _navLinks.seo"
+        class="m-0"
+        routerLinkActive="active font-bold"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a
+          [routerLink]="item.route"
+          class="text-[var(--secondary-color-m)] block text-[14px] font-normal py-[15px] pr-[20px] pl-8 hover:bg-[var(--primary-color)] hover:text-[var(--trinary--color-m)] route"
+          >{{ item.title }}</a
+        >
+      </li>
+    </ul>
+  </p-accordionTab>
+  <!-- Logger tab -->
+  <p-accordionTab
+    header="Logger"
+    contentStyleClass="!bg-transparent !border-0"
+    headerStyleClass="!bg-transparent !border-0 focus:!shadow-none"
+  >
+    <ul class="m-0 p-0">
+      <li
+        *ngFor="let item of _navLinks.logger"
+        class="m-0"
+        routerLinkActive="active font-bold"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a
+          [routerLink]="item.route"
+          class="text-[var(--secondary-color-m)] block text-[14px] font-normal py-[15px] pr-[20px] pl-8 hover:bg-[var(--primary-color)] hover:text-[var(--trinary--color-m)] route"
+          >{{ item.title }}</a
+        >
+      </li>
+    </ul>
+  </p-accordionTab>
+  <!-- Tutorial tab -->
+  <p-accordionTab
+    header="Tutorial"
+    contentStyleClass="!bg-transparent !border-0"
+    headerStyleClass="!bg-transparent !border-0 focus:!shadow-none"
+  >
+    <ul class="m-0 p-0">
+      <li
+        *ngFor="let item of _navLinks.tutorial"
+        class="m-0"
+        routerLinkActive="active font-bold"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a
+          [routerLink]="item.route"
+          class="text-[var(--secondary-color-m)] block text-[14px] font-normal py-[15px] pr-[20px] pl-8 hover:bg-[var(--primary-color)] hover:text-[var(--trinary--color-m)] route"
+          >{{ item.title }}</a
+        >
+      </li>
+    </ul>
+  </p-accordionTab>
+  <!-- Configuration tab -->
+  <p-accordionTab
+    header="Configuration"
+    contentStyleClass="!bg-transparent !border-0"
+    headerStyleClass="!bg-transparent !border-0 focus:!shadow-none"
+  >
+    <ul class="m-0 p-0">
+      <li
+        *ngFor="let item of _navLinks.configuration"
+        class="m-0"
+        routerLinkActive="active font-bold"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a
+          [routerLink]="item.route"
+          class="text-[var(--secondary-color-m)] block text-[14px] font-normal py-[15px] pr-[20px] pl-8 hover:bg-[var(--primary-color)] hover:text-[var(--trinary--color-m)] route"
+          >{{ item.title }}</a
+        >
+      </li>
+    </ul>
+  </p-accordionTab>
+  <!-- Our Team tab -->
+</p-accordion>
+<p
+  routerLink="our-team"
+  routerLinkActive="active font-bold"
+  [routerLinkActiveOptions]="{ exact: true }"
+  class="hover:cursor-pointer"
+>
+  <a
+    class="text-[var(--secondary-color-m)] block text-[14px] font-normal py-[15px] pr-[20px] pl-8 hover:bg-[var(--primary-color)] hover:text-[var(--trinary--color-m)] route"
+  >
+    Our Team
+  </a>
+</p>

@@ -1,0 +1,102 @@
+<section class="p-5">
+  <assaf-documentation-example-container
+    title="Card Skeleton"
+    [html]="skeletonExample.card.html"
+     styleClass="flex mb-4 gap-4 flex-col"
+  >
+    <section class="customSkeleton" >
+      <div class="customSkeleton__headerCard">
+        <assaf-skeleton shape="circle" size="4rem" styleClass="circle">
+        </assaf-skeleton>
+        <div>
+          <assaf-skeleton width="10rem" styleClass="rectangle"> </assaf-skeleton>
+          <assaf-skeleton width="5rem" styleClass="rectangle"> </assaf-skeleton>
+          <assaf-skeleton height="0.5rem"></assaf-skeleton>
+        </div>
+      </div>
+      <assaf-skeleton width="100%" height="150px"> </assaf-skeleton>
+      <div class="customSkeleton__footerCard">
+        <assaf-skeleton width="4rem" height="2rem"> </assaf-skeleton>
+        <assaf-skeleton width="4rem" height="2rem"> </assaf-skeleton>
+      </div>
+    </section>
+  </assaf-documentation-example-container>
+
+  <!-- List Skeleton  -->
+  <assaf-documentation-example-container
+    [html]="skeletonExample.list.html"
+    title="List Skeleton"
+     styleClass="flex mb-4 gap-4 flex-col"
+  >
+    <section class="customSkeleton">
+      <div class="customSkeleton__headerCard">
+        <assaf-skeleton
+          shape="circle"
+          size="4rem"
+          styleClass="circle"
+        ></assaf-skeleton>
+        <div class="customSkeleton__headerCard__item">
+          <assaf-skeleton width="100%" styleClass="rectangle"></assaf-skeleton>
+          <assaf-skeleton width="75%" styleClass="rectangle"></assaf-skeleton>
+        </div>
+      </div>
+      <div class="customSkeleton__headerCard">
+        <assaf-skeleton
+          shape="circle"
+          size="4rem"
+          styleClass="circle"
+        ></assaf-skeleton>
+        <div class="customSkeleton__headerCard__item">
+          <assaf-skeleton width="100%" styleClass="rectangle"></assaf-skeleton>
+          <assaf-skeleton width="75%" styleClass="rectangle"></assaf-skeleton>
+        </div>
+      </div>
+    </section>
+  </assaf-documentation-example-container>
+
+  <!-- Rectangle Skeleton  -->
+  <assaf-documentation-example-container
+    [html]="skeletonExample.rectanle.html"
+    title="Rectangle Skeleton"
+     styleClass="flex mb-4 gap-4 flex-col"
+  >
+    <section>
+      <assaf-skeleton styleClass="rectangle"> </assaf-skeleton>
+      <assaf-skeleton width="10rem" styleClass="rectangle"> </assaf-skeleton>
+      <assaf-skeleton width="5rem" styleClass="rectangle"> </assaf-skeleton>
+      <assaf-skeleton height="2rem" styleClass="rectangle"> </assaf-skeleton>
+      <assaf-skeleton width="10rem" height="4rem"> </assaf-skeleton>
+    </section>
+  </assaf-documentation-example-container>
+
+  <!-- Rounded Skeleton  -->
+  <assaf-documentation-example-container
+    [html]="skeletonExample.rounded.html"
+    title="Rounded Skeleton"
+     styleClass="flex mb-4 gap-4 flex-col"
+  >
+    <section>
+      <assaf-skeleton styleClass="rectangle" borderRadius="16px"> </assaf-skeleton>
+      <assaf-skeleton
+        width="10rem"
+        styleClass="rectangle"
+        borderRadius="16px"
+      ></assaf-skeleton>
+      <assaf-skeleton
+        width="5rem"
+        styleClass="rectangle"
+        borderRadius="16px"
+      ></assaf-skeleton>
+      <assaf-skeleton
+        height="2rem"
+        styleClass="rectangle"
+        borderRadius="16px"
+      ></assaf-skeleton>
+      <assaf-skeleton
+        width="10rem"
+        height="4rem"
+        borderRadius="16px"
+      ></assaf-skeleton>
+    </section>
+  </assaf-documentation-example-container>
+</section>

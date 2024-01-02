@@ -1,0 +1,27 @@
+<section class="p-5">
+  <div class="container">
+    <div *ngFor="let toaster of ToasterExamples">
+      <assaf-documentation-example-container
+      styleClass="flex mb-4 gap-4 flex-col"
+        title="{{ toaster.title }}"
+        html="{{ toaster.htmlCode }}"
+        ts="{{ toaster.tsCode }}"
+      >
+        <assaf-button
+        class="flex flex-col m-auto"
+          [severity]="toaster.severity"
+          (click)="
+            showMessage(toaster.messageSeverity, toaster.message, toaster.key)
+          "
+          label="{{ toaster.message }}"
+        ></assaf-button>
+        <assaf-toast
+          key="{{ toaster.key }}"
+          [position]="toaster.position!"
+          [isResponsive]="true"
+          [breakpoint]="992"
+        ></assaf-toast>
+      </assaf-documentation-example-container>
+    </div>
+  </div>
+</section>

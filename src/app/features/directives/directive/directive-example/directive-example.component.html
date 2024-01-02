@@ -1,0 +1,169 @@
+<form [formGroup]="form">
+  <!-- Input with float label -->
+
+  <section class="m-5">
+    <assaf-documentation-example-container
+      styleClass="flex mb-4 gap-4 flex-col"
+      [html]="examples.textArabic"
+      title="Arabic Only"
+    >
+      <p>
+        <strong class="text-red-600">Note : </strong> To use this directive you
+        must write [<strong>controlName, formControlName </strong>] attributes
+        in assaf Components
+      </p>
+      <assaf-input
+        class="m-auto"
+        [arabicOnly]="true"
+        controlName="arabicOnly"
+        formControlName="arabicOnly"
+        label="Input With Arabic Only"
+        placeholder="Input With Arabic Only"
+        [floatLabel]="true"
+      ></assaf-input>
+    </assaf-documentation-example-container>
+  </section>
+  <section class="m-5">
+    <assaf-documentation-example-container
+      styleClass="flex mb-4 gap-4 flex-col"
+      [html]="examples.textEnglish"
+      title="English Only"
+    >
+      <p>
+        <strong class="text-red-600">Note : </strong> To use this directive you
+        must write [<strong>controlName, formControlName </strong>] attributes
+        in assaf Components
+      </p>
+      <assaf-input
+        class="m-auto"
+        [englishOnly]="true"
+        controlName="englishOnly"
+        formControlName="englishOnly"
+        label="Input With English Only"
+        placeholder="Input With English Only"
+        [floatLabel]="true"
+      ></assaf-input>
+    </assaf-documentation-example-container>
+  </section>
+  <section class="m-5">
+    <assaf-documentation-example-container
+      styleClass="flex mb-4 gap-4 flex-col"
+      [html]="examples.englishWithoutSpace"
+      title="English Without Space"
+    >
+      <p>
+        <strong class="text-red-600">Note : </strong> To use this directive you
+        must write [<strong>controlName, formControlName </strong>] attributes
+        in assaf Components
+      </p>
+      <assaf-input
+        class="m-auto"
+        [englishWithoutSpace]="true"
+        controlName="englishWithoutSpace"
+        formControlName="englishWithoutSpace"
+        label="Input English Without Space"
+        placeholder="Input English Without Space"
+        [floatLabel]="true"
+      ></assaf-input>
+    </assaf-documentation-example-container>
+  </section>
+  <section class="m-5">
+    <assaf-documentation-example-container
+      styleClass="flex mb-4 gap-4 flex-col"
+      [html]="examples.textNumbersOnly"
+      title="Input numberOnly"
+    >
+      <p>
+        <strong class="text-red-600">Note : </strong> To use this directive you
+        must write [<strong>controlName, formControlName </strong>] attributes
+        in assaf Components
+      </p>
+      <assaf-input
+        class="m-auto"
+        numberOnly
+        [enableNumberOnly]="true"
+        controlName="numberOnly"
+        formControlName="numberOnly"
+        label="Input numberOnly"
+        placeholder="Input numberOnly"
+        [floatLabel]="true"
+      ></assaf-input>
+    </assaf-documentation-example-container>
+  </section>
+  <section class="m-5">
+    <assaf-documentation-example-container
+      styleClass="flex mb-4 gap-4 flex-col"
+      [html]="examples.textNumbersWithSpetialCharacter"
+      title="Input numberOnly with special characters"
+    >
+      <p>
+        <strong class="text-red-600">Note : </strong> To use this directive you
+        must write [<strong>controlName, formControlName </strong>] attributes
+        in assaf Components.
+      </p>
+      <p>
+        Make sure that you added your special characters in
+        <strong>specialCharacters</strong> attribute
+      </p>
+      <assaf-input
+        class="m-auto"
+        numberOnly
+        [enableNumberOnly]="true"
+        [specialCharacters]="['-', '#']"
+        controlName="numberOnlyWithSpecialCharacters"
+        formControlName="numberOnlyWithSpecialCharacters"
+        label=" with special characters"
+        placeholder=" with special characters"
+        [floatLabel]="true"
+      ></assaf-input>
+    </assaf-documentation-example-container>
+  </section>
+  <section class="m-5">
+    <assaf-documentation-example-container
+      styleClass="flex mb-4 gap-4 flex-col"
+      [html]="examples.blockCopy"
+      title="Block Copy"
+    >
+      <assaf-input
+        class="m-auto"
+        blockCopy
+        controlName="blockCopy"
+        label="Input With Block Copy"
+        placeholder="Input With Block Copy"
+        [floatLabel]="true"
+      ></assaf-input>
+    </assaf-documentation-example-container>
+  </section>
+  <section class="m-5">
+    <assaf-documentation-example-container
+      styleClass="flex mb-4 gap-4 flex-col"
+      [html]="examples.blockCut"
+      title="Block Cut"
+    >
+      <assaf-input
+        class="m-auto"
+        blockCut
+        controlName="blockCut"
+        label="Input With Block Cut"
+        placeholder="Input With Block Cut"
+        [floatLabel]="true"
+      ></assaf-input>
+    </assaf-documentation-example-container>
+  </section>
+  <section class="m-5">
+    <assaf-documentation-example-container
+      styleClass="flex mb-4 gap-4 flex-col"
+      [html]="examples.blockPaste"
+      title="Block Paste"
+    >
+      <assaf-input
+        class="m-auto"
+        blockPaste
+        controlName="blockPaste"
+        label="Input With Block Paste"
+        placeholder="Input With Block Paste"
+        [floatLabel]="true"
+      ></assaf-input>
+    </assaf-documentation-example-container>
+  </section>
+</form>

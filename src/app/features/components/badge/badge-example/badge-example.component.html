@@ -1,0 +1,37 @@
+<section class="p-5 ">
+  <!-- Basic -->
+  <article>
+    <assaf-documentation-example-container
+      styleClass="flex mb-4 gap-4 flex-col"
+      [html]="value.textBasic"
+      title="Basic"
+      ><assaf-badge class="flex flex-col m-auto" value="10"></assaf-badge
+    ></assaf-documentation-example-container>
+  </article>
+
+  <!-- Size -->
+  <article>
+    <assaf-documentation-example-container
+    styleClass="flex mb-4 gap-4 flex-col"
+      [html]="value.textSize"
+      title="Size"
+    >
+      <assaf-badge class="flex flex-col m-auto" value="10" size="xlarge"></assaf-badge
+    ></assaf-documentation-example-container>
+  </article>
+  <!-- Icon -->
+  <article class="mt-10">
+    <assaf-documentation-example-container
+    styleClass="flex mb-4 gap-4 flex-col"
+     [html]="value.textIcon" title="Icon">
+      <assaf-badge
+        class="m-auto"
+        value="17"
+        icon="pi-bell"
+        styleClass="icon"
+        severity="danger"
+      ></assaf-badge>
+    </assaf-documentation-example-container>
+  </article>
+</section>
+

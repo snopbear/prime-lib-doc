@@ -1,0 +1,38 @@
+<section class="p-5">
+  <h1 class="text-4xl font-bold mb-4">Assaf-Spinner</h1>
+  <p class="text-gray-600">
+    Slider Panel is a generic component that has all Slider & modes
+  </p>
+
+  <!-- Imports -->
+  <div class="mt-10">
+    <h2 class="text-xl font-bold">Imports</h2>
+    <div class="mt-5">
+      <p class="text-gray-600 mb-3">
+        In your desired module add the below import:
+      </p>
+      <assaf-documentation-code-block [tsText]="install.import">
+      </assaf-documentation-code-block>
+    </div>
+  </div>
+
+  <!-- Basic usage -->
+  <div class="mt-10 mb-10">
+    <h2 class="text-xl font-bold">Basic usage</h2>
+    <div class="mt-5">
+      <assaf-documentation-code-block [htmlText]="install.htmlUse">
+      </assaf-documentation-code-block>
+    </div>
+  </div>
+
+  <!-- Properties & events -->
+  <p-tabView>
+    <p-tabPanel header="Properties" leftIcon="pi pi-cog">
+      <ng-template pTemplate="content">
+        <assaf-data-table
+          [tableColumns]="_headers"
+          [data]="properties"
+        ></assaf-data-table
+      ></ng-template> </p-tabPanel
+  ></p-tabView>
+</section>

@@ -1,0 +1,36 @@
+<section class="p-5">
+  <h1 class="text-4xl font-bold mb-4">Assaf-Button-Uploader</h1>
+  <p class="text-gray-600">
+    Button uploader is a component that is responsible for picking file/s
+  </p>
+
+  <!-- Imports -->
+  <div class="mt-10">
+    <h2 class="text-xl font-bold">Imports</h2>
+    <div class="mt-5">
+      <p class="text-gray-600 mb-3">
+        In your desired module add the below import:
+      </p>
+      <assaf-documentation-code-block [tsText]="install.import">
+      </assaf-documentation-code-block>
+    </div>
+  </div>
+
+  <!-- Basic usage -->
+  <div class="mt-10 mb-10">
+    <h2 class="text-xl font-bold">Basic usage</h2>
+    <div class="mt-5">
+      <p class="text-gray-600 mb-3">
+        To start using button uploader just pass value to
+        <span class="text-[var(--orange-color)] font-bold">label</span>
+        attribute & listen to
+        <span class="text-[var(--orange-color)] font-bold">(onChange)</span>
+        event to catch chosen file/s
+      </p>
+      <assaf-documentation-code-block [htmlText]="install.htmlUse">
+      </assaf-documentation-code-block>
+    </div>
+  </div>
+
+  <assaf-documentation-button-uplader-properties></assaf-documentation-button-uplader-properties>
+</section>

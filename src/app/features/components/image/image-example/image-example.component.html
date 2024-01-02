@@ -1,0 +1,47 @@
+<section class="p-5">
+  <section>
+    <assaf-documentation-example-container
+      styleClass="flex mb-4 gap-4 flex-col"
+      [html]="example.textBasic"
+      title="Basic"
+    >
+      <assaf-image
+        class="m-auto"
+        src="assets/image/samurai.jpg"
+        width="350"
+      ></assaf-image>
+    </assaf-documentation-example-container>
+  </section>
+  <section>
+    <assaf-documentation-example-container
+      styleClass="flex mb-4 gap-4 flex-col"
+      [html]="example.textPreview"
+      title="Preview"
+    >
+      <assaf-image
+        class="m-auto"
+        src="assets/image/samurai.jpg"
+        [showPreview]="true"
+        width="350"
+      ></assaf-image>
+    </assaf-documentation-example-container>
+  </section>
+  <article>
+    <assaf-documentation-example-container
+      styleClass="flex mb-4 gap-4 flex-col"
+      [html]="example.textCustom"
+      title="Indicator Templating"
+    >
+      <assaf-image
+        class="m-auto"
+        src="assets/image/samurai.jpg"
+        width="650"
+        [showPreview]="true"
+        [customPreview]="true"
+      >
+        any content
+        <i class="pi pi-eye"></i>
+      </assaf-image>
+    </assaf-documentation-example-container>
+  </article>
+</section>

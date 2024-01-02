@@ -1,0 +1,131 @@
+<section class="p-5">
+  <!--  Basic Chips-->
+  <assaf-documentation-example-container
+    [html]="ChipsExample.Basic.html"
+    [title]="ChipsExample.Basic.title"
+    styleClass="flex mb-4 gap-4 flex-col"
+  >
+    <assaf-chip class="flex flex-col m-auto" label="Mohamed"></assaf-chip>
+  </assaf-documentation-example-container>
+  <!-- Chip with icon -->
+  <assaf-documentation-example-container
+    [html]="ChipsExample.withIcon.html"
+    [title]="ChipsExample.withIcon.title"
+    styleClass="flex mb-4 gap-4 flex-col"
+  >
+    <assaf-chip
+      class="flex flex-col m-auto"
+      chipIcon="pi-facebook"
+      label="Chips"
+    ></assaf-chip>
+  </assaf-documentation-example-container>
+  <!--Removable Chips -->
+  <assaf-documentation-example-container
+    [html]="ChipsExample.removable.html"
+    [title]="ChipsExample.removable.title"
+    styleClass="flex mb-4 gap-4 flex-col"
+  >
+    <assaf-chip
+      class="flex flex-col m-auto"
+      [removable]="true"
+      label="Chips"
+    ></assaf-chip>
+  </assaf-documentation-example-container>
+  <!--Removable Chips -->
+  <assaf-documentation-example-container
+    [html]="ChipsExample.removableCustom.html"
+    [title]="ChipsExample.removableCustom.title"
+    styleClass="flex mb-4 gap-4 flex-col"
+  >
+    <section class="flex gap-4 flex-wrap">
+      <assaf-chip
+        class="flex justify-center m-auto"
+        [removable]="true"
+        label="Chips"
+        removeIcon="pi-times"
+      ></assaf-chip>
+    </section>
+  </assaf-documentation-example-container>
+  <!-- Chips with Image -->
+  <assaf-documentation-example-container
+    [html]="ChipsExample.withImage.html"
+    [title]="ChipsExample.withImage.title"
+    styleClass="flex mb-4 gap-4 flex-col"
+  >
+    <section class="flex gap-4 flex-wrap">
+      <assaf-chip
+        class="flex justify-center m-auto"
+        image="assets/image/user.jpeg"
+        label="Chips"
+      ></assaf-chip>
+    </section>
+  </assaf-documentation-example-container>
+
+  <!-- Chips with custom style -->
+  <assaf-documentation-example-container
+    [html]="ChipsExample.customStyle.html"
+    [title]="ChipsExample.customStyle.title"
+    styleClass="flex mb-4 gap-4 flex-col"
+  >
+    <section class="flex gap-4 flex-wrap">
+      <assaf-chip
+        class="flex justify-center m-auto"
+        styleClass="custom-chip"
+        label="Chips"
+      ></assaf-chip>
+    </section>
+  </assaf-documentation-example-container>
+  <!-- Chip with title -->
+  <assaf-documentation-example-container
+    [html]="ChipsExample.withTitle.html"
+    [title]="ChipsExample.withTitle.title"
+    styleClass="flex mb-4 gap-4 flex-col"
+  >
+    <section class="flex gap-4 flex-wrap">
+      <assaf-chip
+        class="flex flex-col justify-center m-auto"
+        label="Chips"
+        image="assets/image/user.jpeg"
+        title="Name"
+        [removable]="true"
+      >
+      </assaf-chip>
+    </section>
+  </assaf-documentation-example-container>
+
+  <!-- Chip with  custom title -->
+  <assaf-documentation-example-container
+    [html]="ChipsExample.customTitleStyle.html"
+    [title]="ChipsExample.customTitleStyle.title"
+    styleClass="flex mb-4 gap-4 flex-col"
+  >
+    <section class="flex gap-4 flex-wrap">
+      <assaf-chip
+        class="flex flex-col  justify-center m-auto"
+        label="mohamed"
+        image="assets/image/user.jpeg"
+        titleClass="custom-title-chip"
+        title="Name"
+        [removable]="true"
+      >
+      </assaf-chip>
+    </section>
+  </assaf-documentation-example-container>
+  <assaf-documentation-example-container
+    [html]="ChipsExample.mix.html"
+    [title]="ChipsExample.mix.title"
+    styleClass="flex mb-4 gap-4 flex-col"
+  >
+    <section class="flex gap-4 flex-wrap">
+      <assaf-chip
+        class="flex justify-center m-auto"
+        label="Chips"
+        image="assets/image/user.jpeg"
+        removeIcon="pi-times"
+        styleClass="custom-chip"
+        [removable]="true"
+      >
+      </assaf-chip>
+    </section>
+  </assaf-documentation-example-container>
+</section>

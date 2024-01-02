@@ -1,0 +1,11 @@
+.btnPropertiesTable tr :first-child {
+  width: 30% !important;
+}
+.p-datatable-tbody > tr > td {
+  max-width: 570px;
+}
+.table-dropdown-cell {
+  .p-dropdown {
+    width: 100%;
+  }
+}

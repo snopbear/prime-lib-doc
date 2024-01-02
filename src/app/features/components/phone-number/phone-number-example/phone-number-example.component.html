@@ -1,0 +1,56 @@
+<section class="p-5 gap-3 grid" [formGroup]="form">
+  <assaf-documentation-example-container
+    title="Basic"
+    [html]="examples.html.Basic"
+    styleClass="flex mb-4 gap-4 flex-col"
+  >
+    <article class="flex justify-evenly items-center">
+      <assaf-phonenumber controlName="basic"></assaf-phonenumber>
+      <assaf-button
+        label="submit"
+        (click)="submit('basic')"
+        [isRounded]="true"
+        severity="success"
+      ></assaf-button>
+    </article>
+  </assaf-documentation-example-container>
+  <assaf-documentation-example-container
+    title="Label"
+    [html]="examples.html.Label"
+    styleClass="flex mb-4 gap-4 flex-col"
+  >
+    <article class="flex justify-evenly items-center">
+      <assaf-phonenumber
+        label="Phone Number :"
+        labelStyleClass="!font-bold !text-blue-500 "
+        controlName="label"
+      ></assaf-phonenumber
+      ><assaf-button
+        label="submit"
+        (click)="submit('label')"
+        [isRounded]="true"
+        severity="danger"
+        styleClass="!mr-16"
+      ></assaf-button>
+    </article>
+  </assaf-documentation-example-container>
+  <assaf-documentation-example-container
+    title="Country Code"
+    [html]="examples.html.CountryCode"
+    [ts]="examples.ts.CountryCode"
+    styleClass="flex mb-4 gap-4 flex-col"
+  >
+    <article class="flex justify-evenly items-center">
+      <assaf-phonenumber
+        controlName="countryCode"
+        [pereferedCountry]="setCountryCode"
+      ></assaf-phonenumber>
+      <assaf-button
+        label="submit"
+        (click)="submit('countryCode')"
+        [isRounded]="true"
+        severity="help"
+      ></assaf-button>
+    </article>
+  </assaf-documentation-example-container>
+</section>

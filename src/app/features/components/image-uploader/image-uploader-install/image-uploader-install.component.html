@@ -1,0 +1,58 @@
+<section class="p-5">
+  <h1 class="text-4xl font-bold mb-4">Assaf-ImageUploader</h1>
+  <p class="text-gray-600">
+    Assaf-image-uploader is a generic component that has all images uploader &
+    modes
+  </p>
+
+  <!-- Imports -->
+  <div class="mt-10">
+    <h2 class="text-xl font-bold">Imports</h2>
+    <div class="mt-5">
+      <p class="text-gray-600 mb-3">
+        In your desired module add the below import:
+      </p>
+      <assaf-documentation-code-block [tsText]="install.import">
+      </assaf-documentation-code-block>
+    </div>
+  </div>
+
+  <!-- Basic usage -->
+  <div class="mt-10 mb-10">
+    <h2 class="text-xl font-bold">Basic usage</h2>
+    <h3 class="font-bold mt-5">Reactive Forms</h3>
+    <div class="mt-5">
+      <p class="text-gray-600 mb-3">
+        To start using assaf-image-uploader you have to create a
+        <span class="text-[var(--orange-color)] font-bold">form group</span>
+        with controls &
+        <span class="text-[var(--orange-color)] font-bold"
+          >place the assaf-image-uploader component inside</span
+        >
+        this form group with providing contol name
+      </p>
+      <assaf-documentation-code-block
+        [htmlText]="install.form.htmlUse"
+        [tsText]="install.form.tsUse"
+      >
+      </assaf-documentation-code-block>
+    </div>
+  </div>
+
+  <!-- Two way usage -->
+  <div class="mt-10 mb-10">
+    <h3 class="font-bold mt-5">Normal usage (based on emitted event)</h3>
+    <div class="mt-5">
+      <p class="text-gray-600 mb-3">
+        For normal mode you just have to listen to
+        <span class="text-[var(--orange-color)] font-bold">(onChange)</span>
+        event
+      </p>
+      <assaf-documentation-code-block [htmlText]="install.normal.htmlUse">
+      </assaf-documentation-code-block>
+    </div>
+  </div>
+
+  <!-- Properties & events -->
+  <assaf-documentation-image-uploader-properties></assaf-documentation-image-uploader-properties>
+</section>

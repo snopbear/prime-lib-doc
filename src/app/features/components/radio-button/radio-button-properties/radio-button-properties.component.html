@@ -1,0 +1,36 @@
+<p-tabView
+  [scrollable]="(_isMobile | async)! <= 425"
+  styleClass="{{ _isMobile.value <= 768 ? 'center-tabview' : '' }}"
+>
+  <!-- Properties -->
+  <p-tabPanel header="Properties" leftIcon="pi pi-cog">
+    <ng-template pTemplate="content">
+      <!-- Datatable -->
+      <assaf-data-table
+        [tableColumns]="_headers"
+        [data]="_properties"
+      ></assaf-data-table>
+    </ng-template>
+  </p-tabPanel>
+
+  <!-- Interfaces -->
+  <p-tabPanel header="Interfaces" leftIcon="pi-code pi">
+    <ng-template pTemplate="content">
+      <!-- FormInputErrors interface -->
+      <h3 class="font-bold text-xl mb-3">&lt;FormInputErrors&gt; Interface</h3>
+      <assaf-data-table
+        [tableColumns]="_generalHeaders"
+        [data]="_ContrlErrorInterfaces"
+      ></assaf-data-table>
+      <p class="text-gray-600 font-bold">* ? indicates optional parameter</p>
+
+      <div class="mt-10">
+        <h3 class="font-bold text-xl mb-3">&lt;GeneralItem&gt; Interface</h3>
+        <assaf-data-table
+          [tableColumns]="_generalHeaders"
+          [data]="_generalItemInterface"
+        ></assaf-data-table>
+      </div>
+    </ng-template>
+  </p-tabPanel>
+</p-tabView>

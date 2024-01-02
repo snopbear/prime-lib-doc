@@ -1,0 +1,50 @@
+<section class="p-5">
+    <assaf-documentation-example-container
+    [html]="examples.basicTag"
+    styleClass="flex mb-4 gap-4 flex-col"
+    title="Basic"
+    >
+        <assaf-progress-bar [value]="50"></assaf-progress-bar>
+    </assaf-documentation-example-container>
+
+    <assaf-documentation-example-container
+    [html]="examples.showValueTag"
+    styleClass="flex mb-4 gap-4 flex-col"
+    title="ShowValue & Height"
+    >
+        <assaf-progress-bar [value]="50" [showValue]="true" height="20px"></assaf-progress-bar>
+    </assaf-documentation-example-container>
+
+    <assaf-documentation-example-container
+    [html]="examples.bgTag"
+    styleClass="flex mb-4 gap-4 flex-col"
+    title="Background"
+    >
+        <assaf-progress-bar [value]="50" backgroundColor="red"></assaf-progress-bar>
+    </assaf-documentation-example-container>
+
+    <assaf-documentation-example-container
+    [html]="examples.indeterminateModeTag"
+    styleClass="flex mb-4 gap-4 flex-col"
+    title="Indeterminate Mode"
+    >
+    <p class="text-gray-600 mb-3">For progresses with no value to track, set the mode property to indeterminate</p>
+        <assaf-progress-bar mode="indeterminate"></assaf-progress-bar>
+    </assaf-documentation-example-container>
+
+    <assaf-documentation-example-container
+    [html]="examples.unitTag"
+    styleClass="flex mb-4 gap-4 flex-col"
+    title="Unit"
+    >
+        <assaf-progress-bar [value]="28" unit="°C" [showValue]="true" height="20px"></assaf-progress-bar>
+    </assaf-documentation-example-container>
+
+    <assaf-documentation-example-container
+    [html]="examples.styleClassTag"
+    styleClass="flex mb-4 gap-4 flex-col"
+    title="StyleClass"
+    >
+        <assaf-progress-bar [value]="50" unit="°C" [showValue]="true" height="20px" styleClass="bg-orange-400 bg-sky-blue black-text"></assaf-progress-bar>
+    </assaf-documentation-example-container> 
+</section>

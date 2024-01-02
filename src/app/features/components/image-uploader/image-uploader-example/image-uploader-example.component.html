@@ -1,0 +1,41 @@
+<section class="p-5 flex flex-col">
+  <section *ngFor="let view of data">
+    <assaf-documentation-example-container
+      [title]="view.title"
+      [html]="view.tag"
+      [ts]="view.ts"
+      styleClass="flex mb-4 gap-4 flex-col"
+    >
+      <section class="flex flex-col">
+        <ng-container *ngIf="view.title !== 'Reactive Form'; else reactive">
+          <section>
+            <assaf-image-uploader
+              [activeImageClass]="view.activeImageClass"
+              [overlayClass]="view.overlayClass"
+              [uploaderClass]="view.uploaderClass"
+              [styleClass]="view.styleClass"
+              [width]="view.width"
+              [height]="view.height"
+            >
+            </assaf-image-uploader>
+          </section>
+        </ng-container>
+        <ng-template #reactive>
+          <form [formGroup]="form" (submit)="uploadImage()" class="text-center">
+            <assaf-image-uploader
+              styleClass="mx-auto"
+              [uploadIcon]="view.uploadIcon"
+              controlName="file"
+            ></assaf-image-uploader>
+            <assaf-button
+              btnType="submit"
+              severity="info"
+              styleClass="my-2"
+              label="Submit"
+            ></assaf-button>
+          </form>
+        </ng-template>
+      </section>
+    </assaf-documentation-example-container>
+  </section>
+</section>

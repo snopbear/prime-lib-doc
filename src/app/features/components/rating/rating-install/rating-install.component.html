@@ -1,0 +1,56 @@
+<section class="p-5">
+  <h1 class="text-4xl font-bold mb-4">Assaf-Rating</h1>
+  <p class="text-gray-600">Rating component is a star based selection input</p>
+
+  <!-- Imports -->
+  <div class="mt-10">
+    <h2 class="text-xl font-bold">Imports</h2>
+    <div class="mt-5">
+      <p class="text-gray-600 mb-3">
+        In your desired module add the below import:
+      </p>
+      <assaf-documentation-code-block [tsText]="install.import">
+      </assaf-documentation-code-block>
+    </div>
+  </div>
+
+  <!-- Basic usage -->
+  <div class="mt-10 mb-10">
+    <h2 class="text-xl font-bold">Basic usage</h2>
+    <h3 class="font-bold mt-5">Reactive Forms</h3>
+    <div class="mt-5">
+      <p class="text-gray-600 mb-3">
+        To start using assaf-rating you have to create a
+        <span class="text-[var(--orange-color)] font-bold">form group</span>
+        with controls &
+        <span class="text-[var(--orange-color)] font-bold"
+          >place the rating component inside</span
+        >
+        this form group with providing contol name, also set value to
+        <span class="text-[var(--orange-color)] font-bold">stars</span>
+        attribute
+      </p>
+      <assaf-documentation-code-block [htmlText]="install.htmlUse">
+      </assaf-documentation-code-block>
+    </div>
+
+    <div class="mt-10 mb-10">
+      <h3 class="font-bold mt-5">Two Way Binding</h3>
+      <div class="mt-5">
+        <p class="text-gray-600 mb-3">
+          For two way binding pass a variable to
+          <span class="text-[var(--orange-color)] font-bold">value</span>
+          attribute to bind changes to it
+        </p>
+        <assaf-documentation-code-block
+          [htmlText]="install.htmlTwoWay"
+          [tsText]="install.tsTwoWay"
+        >
+        </assaf-documentation-code-block>
+      </div>
+    </div>
+  </div>
+
+  <!-- Properties & events -->
+  <assaf-documentiation-properties-rating></assaf-documentiation-properties-rating>
+</section>

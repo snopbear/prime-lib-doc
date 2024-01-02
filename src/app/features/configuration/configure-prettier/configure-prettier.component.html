@@ -1,0 +1,92 @@
+<section class="p-8 pb-0">
+  <header>
+    <h1 class="text-4xl font-bold mb-8 text-center">Configure Prettier</h1>
+    <article class="flex mt-7 flex-wrap justify-between lg:flex-nowrap">
+      <div class="w-full lg:w-[47%]">
+        <p class="text-xl text-gray-600 font-bold">
+          <strong class="text-black text-2xl">Configure Prettier :</strong> We
+          all wants to write code in a fast bug-free way without thinking about
+          its style most of the time. That’s why in this post I will talk about
+          configuring ESLint and Prettier in an Angular project.
+        </p>
+      </div>
+
+      <aside class="w-full lg:w-[47%] flex flex-col items-center">
+        <ngx-lite-youtube
+          className="shadow-lg"
+          class="w-full max-w-[30rem]"
+          videoId="wtJeWrDmZ5A"
+          [thumbQuality]="'max'"
+        ></ngx-lite-youtube>
+      </aside>
+    </article>
+  </header>
+  <div class="mt-8">
+    <p class="font-bold">Step 1 :</p>
+    <p>Open the terminal and install ESLint schematics using this command:</p>
+    <assaf-documentation-code-block [tsText]="steps.installESLint">
+    </assaf-documentation-code-block>
+  </div>
+  <div class="mt-8">
+    <p class="font-bold">Step 2 :</p>
+    <p>We can also run this command in terminal:</p>
+    <assaf-documentation-code-block [tsText]="steps.ngLint">
+    </assaf-documentation-code-block>
+  </div>
+  <div class="mt-8">
+    <p class="font-bold">Step 3 :</p>
+    <p>
+      Even if we have
+      <span class="font-bold text-blue-600">ESLint</span> watching our code for
+      bugs, we also need a tool to better style and format it. That’s where
+      <span class="font-bold text-blue-600">Prettier</span> comes into play.<br />
+      <span class="font-bold">Prettier</span> is an opinionated code formatter
+      that helps us beautify code in a standardized way every time we save the
+      code.
+    </p>
+    <assaf-documentation-code-block [tsText]="steps.installPrettier">
+    </assaf-documentation-code-block>
+  </div>
+  <div class="mt-8">
+    <p class="font-bold">Step 4 :</p>
+    <p>
+      Then we need to add .prettierrc.json and .prettierignore files in our root
+      project directory<br />
+      Then we can run this command inside our project to format it
+    </p>
+    <assaf-documentation-code-block [tsText]="steps.prettierWrite">
+    </assaf-documentation-code-block>
+  </div>
+  <div class="mt-8">
+    <p class="font-bold">Step 5 :</p>
+    <p>
+      Inside .prettierrc.json we can change the default settings by overriding
+      them. The settings I use most of the time are this:
+    </p>
+    <assaf-documentation-code-block [tsText]="steps.prettierJson">
+    </assaf-documentation-code-block>
+  </div>
+  <div class="mt-8">
+    <p class="font-bold">Step 6 :</p>
+    <p>
+      <span class="font-bold"
+        >Configure Prettier to be used as an ESLint plugin</span
+      ><br />
+
+      For ESLint and Prettier to play well together, we need to run Prettier as
+      an ESLint plugin. This way we can just call ng lint — fix and ESLint will
+      fix bugs but also format the code. Open terminal and type:
+    </p>
+    <assaf-documentation-code-block [tsText]="steps.installMax">
+    </assaf-documentation-code-block>
+  </div>
+  <div class="mt-8">
+    <p class="font-bold">Step 7 :</p>
+    <p>
+      Now we need to edit the .eslintrc.json file to include the prettier
+      plugin.
+      <assaf-documentation-code-block [tsText]="steps.eslintrcJson">
+      </assaf-documentation-code-block>
+    </p>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+<section class="p-5">
+  <section [formGroup]="form">
+    <!-- Dynamic -->
+    <assaf-documentation-example-container
+      [title]="examples.basic.title"
+      [html]="examples.basic.htmlUse"
+      [ts]="examples.basic.tsUse"
+      styleClass="flex mb-4 gap-4 flex-col"
+    >
+      <section class="m-auto">
+        <ng-container *ngFor="let item of categories; let i = index">
+          <assaf-checkbox
+            class="checkbox flex customCheckBox"
+            [control]="$any(categoryController).controls[i]"
+            [label]="item.key"
+            [controlValue]="item.value"
+          ></assaf-checkbox>
+        </ng-container>
+      </section>
+    </assaf-documentation-example-container>
+  </section>
+  <!-- Two Way -->
+  <assaf-documentation-example-container
+    [title]="examples.twoWay.title"
+    [html]="examples.twoWay.htmlUse"
+    [ts]="examples.twoWay.tsUse"
+    styleClass="flex mb-4 gap-4 flex-col"
+  >
+    <section class="m-auto">
+      <ng-container *ngFor="let item of categories">
+        <assaf-checkbox
+          class="checkbox flex customCheckBox"
+          (valueChange)="showValue(item)"
+          [value]="checked"
+          [label]="item.key"
+        ></assaf-checkbox>
+      </ng-container>
+    </section>
+  </assaf-documentation-example-container>
+</section>

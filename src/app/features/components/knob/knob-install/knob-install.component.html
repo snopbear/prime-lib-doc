@@ -1,0 +1,38 @@
+<section class="p-5">
+  <h1 class="text-4xl font-bold mb-4">Assaf-Knob</h1>
+  <p class="text-gray-600">
+    Knob is a form component to define number inputs with a dial.
+  </p>
+
+  <!-- Imports -->
+  <div class="mt-10">
+    <h2 class="text-xl font-bold">Imports</h2>
+    <div class="mt-5">
+      <p class="text-gray-600 mb-3">
+        In your desired module add the below import:
+      </p>
+      <assaf-documentation-code-block [tsText]="install.import">
+      </assaf-documentation-code-block>
+    </div>
+  </div>
+
+  <!-- Basic usage -->
+  <div class="my-10 mb-10">
+    <h2 class="text-xl font-bold">Basic usage</h2>
+    <div class="mt-5">
+      <p class="text-gray-600 mb-3">
+        To start using assaf-knob you have to pass variable to
+        <span class="text-[var(--orange-color)] font-bold">value</span>
+        attribute in order to bind data
+      </p>
+      <assaf-documentation-code-block
+        [htmlText]="install.htmlUse"
+        [tsText]="install.TS"
+      >
+      </assaf-documentation-code-block>
+    </div>
+  </div>
+
+  <!-- Properties & events -->
+  <assaf-documentation-knob-table></assaf-documentation-knob-table>
+</section>

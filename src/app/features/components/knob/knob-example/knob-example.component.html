@@ -1,0 +1,127 @@
+<section class="p-5">
+  <assaf-documentation-example-container
+    [html]="examples.textBasic"
+    styleClass="flex mb-4 gap-4 flex-col"
+    title="Basic"
+    ><assaf-knob
+      class="flex flex-col m-auto"
+      [value]="number"
+      align="center"
+    ></assaf-knob>
+  </assaf-documentation-example-container>
+
+  <assaf-documentation-example-container
+    [html]="examples.textReadOnly"
+    styleClass="flex mb-4 gap-4 flex-col"
+    title="ReadOnly"
+    ><assaf-knob
+      class="flex flex-col m-auto"
+      [value]="number"
+      [readOnly]="true"
+      align="center"
+    ></assaf-knob>
+  </assaf-documentation-example-container>
+
+  <assaf-documentation-example-container
+    [html]="examples.textLabel"
+    styleClass="flex mb-4 gap-4 flex-col"
+    title="Label"
+    ><assaf-knob
+      [value]="number"
+      class="flex flex-col m-auto"
+      label="Price"
+      align="center"
+    ></assaf-knob>
+  </assaf-documentation-example-container>
+
+  <assaf-documentation-example-container
+    [html]="examples.textDisabled"
+    styleClass="flex flex-col gap-16"
+    title="Disabled"
+    ><assaf-knob
+      class="flex flex-col m-auto"
+      [value]="number"
+      [disabled]="true"
+      align="center"
+    ></assaf-knob>
+  </assaf-documentation-example-container>
+
+  <assaf-documentation-example-container
+    [html]="examples.textTemplate"
+    styleClass="flex mb-4 gap-4 flex-col"
+    title="Template"
+    ><assaf-knob
+      class="flex flex-col m-auto"
+      [value]="number"
+      valueTemplate="%"
+      align="center"
+    ></assaf-knob>
+  </assaf-documentation-example-container>
+
+  <assaf-documentation-example-container
+    [html]="examples.Min_Max"
+    styleClass="flex mb-4 gap-4 flex-col"
+    title="Min/Max"
+  >
+    <assaf-knob
+      class="flex flex-col m-auto"
+      [value]="number"
+      [minValue]="-90"
+      [maxValue]="90"
+      align="center"
+    ></assaf-knob>
+  </assaf-documentation-example-container>
+
+  <assaf-documentation-example-container
+    [html]="examples.textStroke"
+    styleClass="flex mb-4 gap-4 flex-col"
+    title="Stroke"
+  >
+    <assaf-knob
+      class="flex flex-col m-auto"
+      [value]="number"
+      [strokeWidth]="20"
+      align="center"
+    ></assaf-knob>
+  </assaf-documentation-example-container>
+
+  <assaf-documentation-example-container
+    [html]="examples.textStep"
+    styleClass="flex mb-4 gap-4 flex-col"
+    title="Step"
+  >
+    <assaf-knob
+      class="flex flex-col m-auto"
+      [value]="number"
+      [step]="20"
+      align="center"
+    ></assaf-knob>
+  </assaf-documentation-example-container>
+
+  <assaf-documentation-example-container
+    [html]="examples.textColor"
+    styleClass="flex mb-4 gap-4 flex-col"
+    title="Colores"
+  >
+    <assaf-knob
+      class="flex flex-col m-auto"
+      [value]="number"
+      valueColor="#4895ef"
+      rangeColor="#7209b7"
+      align="center"
+    ></assaf-knob>
+  </assaf-documentation-example-container>
+
+  <assaf-documentation-example-container
+    [html]="examples.textSize"
+    styleClass="flex mb-4 gap-4 flex-col"
+    title="Size"
+  >
+    <assaf-knob
+      class="flex flex-col m-auto"
+      [value]="number"
+      [size]="200"
+      align="center"
+    ></assaf-knob>
+  </assaf-documentation-example-container>
+</section>

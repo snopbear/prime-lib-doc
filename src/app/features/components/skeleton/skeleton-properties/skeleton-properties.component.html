@@ -1,0 +1,15 @@
+<p-tabView
+  [scrollable]="(_isMobile | async)! <= 425"
+  styleClass="{{ _isMobile.value <= 768 ? 'center-tabview' : '' }}"
+>
+  <!-- Properties -->
+  <p-tabPanel header="Properties" leftIcon="pi pi-cog">
+    <ng-template pTemplate="content">
+      <!-- Datatable -->
+      <assaf-data-table
+        [tableColumns]="_headers"
+        [data]="_properties"
+      ></assaf-data-table>
+    </ng-template>
+  </p-tabPanel>
+</p-tabView>

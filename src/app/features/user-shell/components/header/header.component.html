@@ -1,0 +1,33 @@
+<nav
+  class="min-h-full py-4 lg:p-0 bg-[var(--primary-color-m)] lg:overflow-y-scroll lg:h-[100vh]"
+>
+  <div
+    class="flex lg:flex-col justify-between lg:justify-start items-center lg:items-start w-11/12 lg:w-full mx-auto lg:mx-0"
+  >
+    <div class="lg:py-4 lg:px-3 lg:mb-4 w-fit lg:w-full">
+      <a
+        class="text-white flex gap-4 lg:flex-col items-center text-center md:text-2xl text-xl font-extrabold"
+        routerLink="/"
+      >
+        <figure class="lg:!w-1/3 w-1/12">
+          <img class="mx-auto" src="assets/image/logo-ico.png" alt="assaf-logo" />
+        </figure>
+        <span>Certified IT Consultants</span></a
+      >
+    </div>
+    <assaf-documentation-nav-content
+      class="w-full"
+      *ngIf="!(_isMobile | async)"
+    ></assaf-documentation-nav-content>
+    <assaf-button
+      styleClass="!bg-transparent !text-white	!border-0 !py-2"
+      btnIcon="pi-bars !text-lg"
+      *ngIf="_isMobile | async"
+      (click)="enableSideNav()"
+    ></assaf-button>
+  </div>
+</nav>
+
+<p-sidebar [fullScreen]="true" [(visible)]="_showSideNav">
+  <assaf-documentation-nav-content></assaf-documentation-nav-content>
+</p-sidebar>

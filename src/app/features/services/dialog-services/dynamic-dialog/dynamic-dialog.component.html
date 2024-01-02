@@ -1,0 +1,41 @@
+<section class="p-5">
+    <h1 class="text-4xl font-bold mb-4">Assaf-Dynamic-Dialog</h1>
+    <p class="text-gray-600">
+        Dynamic dialog is a service used to display dialog box ( Pop-up )on demand.
+    </p>
+    <!-- Imports -->
+  <div class="mt-10">
+    <h2 class="text-xl font-bold">Basic Usage</h2>
+    <div class="mt-5">
+      <p class="text-gray-600 mb-3">
+        Step1 : Firstly you need to add the DialogService in the AppModule providers
+      </p>
+      <assaf-documentation-code-block [tsText]="install.providers">
+      </assaf-documentation-code-block>
+      <p class="text-gray-600 my-3">
+        Step2 : Then inject the DynamicDialogService in your component's contructor as follows
+      </p>
+        <assaf-documentation-code-block [tsText]="install.inject">
+        </assaf-documentation-code-block>
+    </div>
+  </div>
+
+  <!-- Display Dialog -->
+  <div class="my-10">
+    <h2 class="text-xl font-bold">Display Dialog</h2>
+    <div class="mt-5">
+        <div class="flex justify-between items-center mb-3">
+          <p class="text-gray-600">
+              To display dialog use the showDialog & pass the component to be viewed
+          </p>
+          <assaf-button
+          label="click here"
+          (click)="dispalyDialog()"
+          ></assaf-button>
+        </div>
+      <assaf-documentation-code-block [htmlText]="install.html" [tsText]="install.ts">
+      </assaf-documentation-code-block>
+    </div>
+  </div>
+  <assaf-documentation-dialog-services-methods></assaf-documentation-dialog-services-methods>
+</section>

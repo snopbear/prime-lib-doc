@@ -1,0 +1,53 @@
+<section class="p-5">
+  <h1 class="text-4xl font-bold mb-4">Assaf-Datatable</h1>
+  <p class="text-gray-600">Datatable displays data in tabular format</p>
+
+  <!-- Imports -->
+  <div class="mt-10">
+    <h2 class="text-xl font-bold">Imports</h2>
+    <div class="mt-5">
+      <p class="text-gray-600 mb-3">
+        In your desired module add the below import:
+      </p>
+      <assaf-documentation-code-block [tsText]="install.import">
+      </assaf-documentation-code-block>
+    </div>
+  </div>
+
+  <!-- Basic usage -->
+  <div class="mt-10 mb-10">
+    <h2 class="text-xl font-bold">Basic usage</h2>
+    <div class="mt-5">
+      <p class="text-gray-600 mb-3">
+        To start using assaf-datatable you need to
+        <span class="text-[var(--orange-color)] font-bold"
+          >provide two arrays</span
+        >; one is the data that will be displayed & the other is responsible for
+        table configuration
+      </p>
+      <assaf-documentation-code-block
+        [htmlText]="install.htmlUse"
+        [tsText]="install.tsUse"
+      >
+      </assaf-documentation-code-block>
+    </div>
+  </div>
+
+  <!-- Search onput usage -->
+  <div class="mt-10 mb-10">
+    <h2 class="text-xl font-bold">Search Input</h2>
+    <div class="mt-5">
+      <p class="text-gray-600 mb-3">
+        Search input is a special component made only for datatable to achieve
+        global search based on
+        <span class="text-[var(--orange-color)] font-bold">filterKeys</span>
+        values
+      </p>
+      <assaf-documentation-code-block [htmlText]="install.search">
+      </assaf-documentation-code-block>
+    </div>
+  </div>
+
+  <!-- Properties & events -->
+  <assaf-documentation-datatable-properties></assaf-documentation-datatable-properties>
+</section>

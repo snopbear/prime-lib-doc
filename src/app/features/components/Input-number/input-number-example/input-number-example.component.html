@@ -1,0 +1,48 @@
+<section class="p-5" [formGroup]="form">
+  <header>
+    <h3>
+      <span class="text-red-600 font-bold">NOTE</span> : Assaf-Input must
+      implemented inside formGroup.
+    </h3>
+  </header>
+  <div class="mt-10" *ngFor="let input of InputExamples">
+    <assaf-documentation-example-container
+      title="{{ input.title }}"
+      [html]="input.htmlCode"
+      styleClass="flex mb-4 gap-4 flex-col"
+    >
+      <assaf-input-number
+        [label]="input.label"
+        [controlName]="input.controlName"
+        [placeholder]="input.placeholder!"
+        [controlErrors]="input.placeholder ? errors : {}"
+        [floatLabel]="input.floatLabel!"
+        [currency]="input.currency!"
+        [allowEmpty]="input.allowEmpty!"
+        [buttonLayout]="input.buttonLayout || 'stacked'"
+        [decrementButtonClass]="input.decrementButtonClass!"
+        [decrementButtonIcon]="input.decrementButtonIcon || 'pi-chevron-down'"
+        [incrementButtonClass]="input.incrementButtonClass!"
+        [incrementButtonIcon]="input.incrementButtonIcon || 'pi-chevron-up'"
+        [inputStyleClass]="input.inputStyleClass!"
+        [labelClass]="input.labelClass!"
+        [locale]="input.locale!"
+        [localeMatcher]="input.localeMatcher!"
+        [maxFractionDigits]="input.maxFractionDigits!"
+        [maxValue]="input.maxValue!"
+        [minFractionDigits]="input.minFractionDigits!"
+        [minValue]="input.minValue!"
+        [mode]="input.mode || 'decimal'"
+        [prefix]="input.prefix!"
+        [readOnly]="input.readOnly!"
+        [showButtons]="input.showButtons!"
+        [showClear]="input.showClear!"
+        [size]="input.size || 20"
+        [step]="input.step || 1"
+        [useGrouping]="input.useGrouping || true"
+        [suffix]="input.suffix!"
+        class="flex flex-col m-auto"
+      ></assaf-input-number>
+    </assaf-documentation-example-container>
+  </div>
+</section>

@@ -1,0 +1,19 @@
+import { createBasicClass, createImport } from '@factories/index';
+
+export const HttpCallsInitialization = {
+  defination: 'HTTPCalls is a generic http requests service',
+  import: createImport([
+    { import: 'HTTPCallsService', from: '@angular/common/http' },
+  ]),
+  initialize: createBasicClass(
+    [
+      {
+        import: 'HTTPCallsService',
+        from: 'assaf-prime-lib/services',
+      },
+    ],
+    `<div><span style="color: rgb(85, 57, 130);">    constructor</span>(<span style="color: rgb(85, 57, 130);">private</span> __http:<span style="color: rgb(65, 168, 95);">HTTPCallsService</span>){}</div>`
+  ),
+  usage: `<p><strong><span style="color: rgb(184, 49, 47);">NOTE :&nbsp;</span></strong>Assume that you have a database of &apos;<span style="color: rgb(65, 168, 95);"><strong>employees</strong></span>&apos; data.<br> <span style="color: rgb(184, 49, 47);">&nbsp; &nbsp; *</span>&nbsp; you will make an interface called &apos;<span style="color: rgb(85, 57, 130);"><strong>Employee</strong></span>&apos; and pass it as a type of data&nbsp;<br> &nbsp; &nbsp; that you will interact with it by &quot;<span style="color: rgb(243, 121, 52);"><strong>consumingAPI</strong></span>&quot; method.</p>
+<div><span style="color: rgb(184, 49, 47);">GET Request:</span> <span style="color: rgb(85, 57, 130);"><br>&nbsp; &nbsp; this.__http</span>.<span style="color: rgb(243, 121, 52);">consumingAPI</span>&lt;<span style="color: rgb(65, 168, 95);">Employee</span>&gt;<span style="color: rgb(243, 121, 52);">(</span>&apos;http://localhost:4200/employees&apos;, &apos;<span style="color: rgb(41, 105, 176);">GET</span>&apos;<span style="color: rgb(243, 121, 52);">)</span>.subscribe(<br> &nbsp; &nbsp; &nbsp; (<span style="color: rgb(65, 168, 95);">response</span>:any) =&gt; console.<span style="color: rgb(243, 121, 52);">log(</span>response))<br><span style="color: rgb(184, 49, 47);">POST Request:</span> <br><span style="color: rgb(85, 57, 130);">&nbsp; &nbsp; this.__http</span>.<span style="color: rgb(243, 121, 52);">consumingAPI</span>&lt;<span style="color: rgb(65, 168, 95);">Employee</span>&gt;<span style="color: rgb(243, 121, 52);">(</span>&apos;http://localhost:4200/employees&apos;, &apos;<span style="color: rgb(41, 105, 176);">POST</span>&apos;, employee<span style="color: rgb(243, 121, 52);">)<br></span>&nbsp; &nbsp; &nbsp; .subscribe((<span style="color: rgb(65, 168, 95);">response</span>:any) =&gt; console.<span style="color: rgb(243, 121, 52);">log(</span>response<span style="color: rgb(243, 121, 52);">)</span>)</div><div><span style="color: rgb(184, 49, 47);">DELETE Request:</span> <span style="color: rgb(85, 57, 130);"><br>&nbsp; &nbsp; this.__http</span>.<span style="color: rgb(243, 121, 52);">consumingAPI</span>&lt;<span style="color: rgb(65, 168, 95);">Employee</span>&gt;<span style="color: rgb(243, 121, 52);">(</span>&apos;http://localhost:4200/employees&apos;, &apos;<span style="color: rgb(41, 105, 176);">DELETE</span>&apos;<span style="color: rgb(243, 121, 52);">)</span>.subscribe(<br> (<span style="color: rgb(65, 168, 95);">response</span>:any) =&gt; console.<span style="color: rgb(243, 121, 52);">log(</span>response))<br><br><span style="color: rgb(184, 49, 47);">PUT Request:</span><br><span style="color: rgb(85, 57, 130);">&nbsp; &nbsp; this.__http</span>.<span style="color: rgb(243, 121, 52);">consumingAPI</span>&lt;<span style="color: rgb(65, 168, 95);">Employee</span>&gt;<span style="color: rgb(243, 121, 52);">(</span>&apos;http://localhost:4200/employees&apos;, &apos;<span style="color: rgb(41, 105, 176);">PUT</span>&apos;, employee<span style="color: rgb(243, 121, 52);">)<br></span>&nbsp; &nbsp; &nbsp; .subscribe((<span style="color: rgb(65, 168, 95);">response</span>:any) =&gt; console.<span style="color: rgb(243, 121, 52);">log(</span>response<span style="color: rgb(243, 121, 52);">)</span>)</div>`,
+};

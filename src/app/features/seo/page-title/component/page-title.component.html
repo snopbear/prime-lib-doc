@@ -1,0 +1,100 @@
+<section class="p-7">
+  <h1 class="text-4xl font-bold mb-4">PageTitleService</h1>
+  <div class="mt-10">
+    <p class="text-gray-600 mb-3">
+      The title tag is used to display the HTML page title in the browser’s
+      title bar. It is a required tag and important for
+      <b class="text-red-600">Search Engine Optimization</b>. An Angular
+      application is considered a single page application (SPA). Sometimes we
+      have to change browser title as you navigate through the pages. Title
+      service is a very convenient method to read and set the document title.
+      Angular doesn’t recommend accessing the Document object manually to get
+      and set the title.
+
+      <span class="text-red-900 m-3 text-xl"
+        >In your component please use that code as below:</span
+      >
+    </p>
+    <assaf-documentation-code-block [tsText]="steps.howToUse">
+    </assaf-documentation-code-block>
+  </div>
+
+  <h2 class="text-4xl font-bold m-4">
+    How to set the browser title for each page
+  </h2>
+  <div class="mt-10">
+    <p class="text-gray-600 m-3">
+      We need to define the routing module for our app with the data object.
+      This is where we need to put our title.
+    </p>
+    <assaf-documentation-code-block [tsText]="steps.eachPageRoutes">
+    </assaf-documentation-code-block>
+    <b class="text-blue-300 m-3">First : </b>
+    <p class="text-gray-600 m-3">
+      Let’s see how we can implement this. First, we need to define the routing
+      module for our app with the data object. This is where we need to put our
+      title.
+    </p>
+    <b class="text-blue-300 m-3">Second : </b>
+    <p class="text-gray-600 m-3">
+      We need to import Router and ActivatedRoute <b>In your Component</b> so
+      that we can subscribe to the router events and change the title with the
+      Title service. We subscribe to router events and access the data with the
+      help of ActivatedRoute and set the title with Page Title service.
+    </p>
+    <assaf-documentation-code-block [tsText]="steps.eachPage">
+    </assaf-documentation-code-block>
+  </div>
+
+  <h2 class="text-4xl font-bold m-4">
+    How to set the browser title with lazy load Modules
+  </h2>
+  <div class="mt-10">
+    <p class="text-gray-600 m-3">
+      Most of the time we lazy load our modules to improve the performance. We
+      need to do little changes since there are nested children.
+    </p>
+    <p class="text-blue-900 m-3 underline"><b>app-routing.module.ts </b></p>
+
+    <assaf-documentation-code-block [tsText]="steps.lazyLoadedModule">
+    </assaf-documentation-code-block>
+
+    <p class="text-blue-900 m-3 underline"><b>auth-routing.module.ts </b></p>
+    <br />
+    <assaf-documentation-code-block [tsText]="steps.lazyLoadedRoutes">
+    </assaf-documentation-code-block>
+
+    <p class="text-gray-600 m-3">
+      We need to have while loop to loop until you find the last child
+    </p>
+    <assaf-documentation-code-block [tsText]="steps.lazyLoaded">
+    </assaf-documentation-code-block>
+  </div>
+
+  <h2 class="text-4xl font-bold m-4">Conclusion</h2>
+  <p class="text-gray-600 mb-3">
+    <b
+      >PageTitleService is a very convenient service to read and set the
+      document title. Angular doesn’t recommend accessing the Document object
+      manually to get and set the title.
+    </b>
+  </p>
+
+  <h2><strong>Summary</strong></h2>
+  <ul style="list-style: disc; padding-left: 30px">
+    <li>Every single page app has an index.html</li>
+    <li>
+      We can set the tile for the whole app with the title tag in the head
+      section of index.html
+    </li>
+    <li>Title tag can&rsquo;t be accessed through Angular Data binding.</li>
+    <li>
+      Angular provides title service to get and set the current document title.
+    </li>
+    <li>
+      We can get and set the title for each page at one place with subscribing
+      to angular routes.
+    </li>
+    <li>For nested modules, we have to loop until you find the last child.</li>
+  </ul>
+</section>

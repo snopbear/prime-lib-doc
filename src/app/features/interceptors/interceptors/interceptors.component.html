@@ -1,0 +1,16 @@
+<section class="p-5">
+  <h1 class="text-4xl font-bold mb-4">Interceptors</h1>
+  <!-- Interceptors Types-->
+  <ng-container *ngFor="let item of install">
+    <div class="mt-10">
+      <h2 class="text-xl font-bold">Provide {{ item.name }} Interceptor</h2>
+      <div class="mt-5">
+        <p class="text-gray-600 mb-3">
+          Provide Interceptor in AppModule as follows:
+        </p>
+        <assaf-documentation-code-block [tsText]="item.tsUse">
+        </assaf-documentation-code-block>
+      </div>
+    </div>
+  </ng-container>
+</section>

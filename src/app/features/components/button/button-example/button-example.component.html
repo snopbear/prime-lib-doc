@@ -1,0 +1,80 @@
+<section class="p-5">
+    <!-- Severity Buttons -->
+    
+    <div>
+      <assaf-divider label="Severity" align="left"></assaf-divider>
+      <assaf-documentation-example-loop [data]="severityBtnExamples">
+        <ng-template  let-item>
+          <section class="m-auto">
+            <assaf-button
+            label="{{ item.label }}"
+            [severity]="item.severity"
+            class="mx-1"
+          ></assaf-button>
+          </section>
+        </ng-template>
+      </assaf-documentation-example-loop>
+    </div>
+    <!-- Sizes -->
+    <div>
+      <assaf-divider label="Sizes" align="left"></assaf-divider>
+      <assaf-documentation-example-loop [data]="sizeBtnExamples">
+        <ng-template let-item>
+          <assaf-button
+            [size]="item.size!"
+            label="{{ item.label }}"
+            class="mx-1"
+          ></assaf-button> </ng-template
+      ></assaf-documentation-example-loop>
+    </div>
+    <!-- Shapes -->
+    <div>
+      <assaf-divider label="Shapes" align="left"></assaf-divider>
+      <assaf-documentation-example-loop [data]="shapesBtnExamples">
+        <ng-template let-item>
+          <assaf-button
+            label="{{ item.label }}"
+            [isRounded]="item.isRounded!"
+            [isOutline]="item.isOutline!"
+            [isRaised]="item.isRaised!"
+            [isText]="item.isText!"
+            [severity]="item.severity!"
+            class="mx-1"
+          ></assaf-button
+        ></ng-template>
+      </assaf-documentation-example-loop>
+    </div>
+    <!-- Icons -->
+    <div>
+      <assaf-divider label="Icons" align="left"></assaf-divider>
+      <assaf-documentation-example-loop [data]="iconsBtnExamples">
+        <ng-template let-item>
+          <assaf-button
+            label="{{ item.label }}"
+            btnIcon="{{ item.btnIcon }}"
+            [severity]="item.severity!"
+            [iconPos]="item.iconPos!"
+            [isOutline]="item.isOutline!"
+            class="mx-1"
+          ></assaf-button>
+        </ng-template>
+      </assaf-documentation-example-loop>
+    </div>
+    <!-- with badge -->
+    <div>
+      <assaf-divider label="Button with badge" align="left"></assaf-divider>
+      <assaf-documentation-example-loop [data]="badgeBtnExamples">
+        <ng-template let-item>
+          <assaf-button
+            [mode]="item.mode!"
+            badgeValue="{{ item.badgeValue }}"
+            label="{{ item.label }}"
+            btnIcon="{{ item.btnIcon }}"
+            [severity]="item.severity!"
+            [badgeSeverity]="item.badgeSeverity!"
+            class="mx-1"
+          ></assaf-button></ng-template
+      ></assaf-documentation-example-loop>
+    </div>
+  <!-- End Of container -->
+</section>

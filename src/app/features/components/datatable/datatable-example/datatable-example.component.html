@@ -1,0 +1,237 @@
+<section class="p-5 flex flex-col gap-9">
+  <!-- Basic -->
+  <assaf-documentation-example-container
+    title="Basic"
+    [html]="examples.basic.html"
+    [ts]="examples.basic.ts"
+    styleClass="flex flex-col gap-7"
+  >
+    <assaf-data-table
+      [tableColumns]="headers"
+      [data]="users"
+      (stateChange)="stateClicked($event)"
+    ></assaf-data-table>
+  </assaf-documentation-example-container>
+
+  <!-- Table with pagination -->
+  <assaf-documentation-example-container
+    title="Table with pagination"
+    [html]="examples.pagination.html"
+    [ts]="examples.pagination.ts"
+    styleClass="flex flex-col gap-7"
+  >
+    <assaf-data-table
+      [tableColumns]="headers"
+      [data]="users"
+      [paginate]="true"
+      [rowsCountPerPage]="2"
+      [rowsPerPageOptions]="[2, 3, 4]"
+      (stateChange)="stateClicked($event)"
+    ></assaf-data-table>
+  </assaf-documentation-example-container>
+
+  <!-- Expanded Rows -->
+  <assaf-documentation-example-container
+    title="Expanded Rows"
+    [html]="examples.expanded.html"
+    [ts]="examples.expanded.ts"
+    styleClass="flex flex-col gap-7"
+  >
+    <assaf-data-table
+      [tableColumns]="headers"
+      [data]="users"
+      (stateChange)="stateClicked($event)"
+      rowExpansionDataKey="id"
+    >
+      <!-- Add ng-tamplate tag with #expandedRow -->
+      <ng-template #expandedRow let-item>
+        <assaf-data-table
+          [data]="item.details"
+          [tableColumns]="subHeaders"
+        ></assaf-data-table>
+      </ng-template>
+    </assaf-data-table>
+  </assaf-documentation-example-container>
+
+  <!-- Table with caption & summary -->
+  <assaf-documentation-example-container
+    title="Table with caption & summary"
+    [html]="examples.captionSummary.html"
+    [ts]="examples.captionSummary.ts"
+    styleClass="flex flex-col gap-7"
+  >
+    <assaf-data-table
+      [tableColumns]="headers"
+      [data]="users"
+      (stateChange)="stateClicked($event)"
+    >
+      <!-- Add ng-tamplate tag with #caption to show caption -->
+      <ng-template #caption>
+        <p>Hello from caption</p>
+      </ng-template>
+
+      <!-- Add ng-tamplate tag with #summary to show summary -->
+      <ng-template #summary>
+        <p>Hello from summary</p>
+      </ng-template>
+    </assaf-data-table>
+  </assaf-documentation-example-container>
+
+  <!-- Gridlines & hide header -->
+  <assaf-documentation-example-container
+    title="Hidden header & gridlines"
+    [html]="examples.gridHeader.html"
+    [ts]="examples.gridHeader.ts"
+    styleClass="flex flex-col gap-7"
+  >
+    <assaf-data-table
+      [tableColumns]="headers"
+      [data]="users"
+      [gridLines]="true"
+      [showTableHeader]="false"
+      (stateChange)="stateClicked($event)"
+    ></assaf-data-table>
+  </assaf-documentation-example-container>
+
+  <!-- Table checkbox -->
+  <assaf-documentation-example-container
+    title="Table with row selection"
+    [html]="examples.checkbox.html"
+    [ts]="examples.checkbox.ts"
+    styleClass="flex flex-col gap-7"
+  >
+    <assaf-data-table
+      [tableColumns]="checkboxHeaders"
+      [data]="users"
+      (stateChange)="stateClicked($event)"
+      (selectionChange)="selected($event)"
+    ></assaf-data-table>
+  </assaf-documentation-example-container>
+
+  <!-- Table size & freeze header -->
+  <assaf-documentation-example-container
+    title="Table size & freeze header"
+    [html]="examples.sizeFreeze.html"
+    [ts]="examples.sizeFreeze.ts"
+    styleClass="flex flex-col gap-7"
+  >
+    <assaf-data-table
+      [tableColumns]="headers"
+      [data]="users"
+      [freezeHeader]="true"
+      size="sm"
+      (stateChange)="stateClicked($event)"
+    ></assaf-data-table>
+  </assaf-documentation-example-container>
+
+  <!-- Table with internal scroll -->
+  <assaf-documentation-example-container
+    title="Table with internal scroll"
+    [html]="examples.scroll.html"
+    [ts]="examples.scroll.ts"
+    styleClass="flex flex-col gap-7"
+  >
+    <assaf-data-table
+      [tableColumns]="headers"
+      [data]="users"
+      [isScrollable]="true"
+      scrollHeight="250px"
+      (stateChange)="stateClicked($event)"
+    ></assaf-data-table>
+  </assaf-documentation-example-container>
+
+  <!-- responsive Table -->
+
+  <assaf-documentation-example-container
+    title="Responsive Table"
+    [html]="examples.responsive.html"
+    [ts]="examples.responsive.ts"
+    styleClass="flex flex-col gap-7"
+  >
+    <p class="ps-4">
+      <span class="text-red-600 font-bold">Note: </span>
+      <span>Minimize screen to 1200px to see responsive view </span>
+    </p>
+    <assaf-data-table
+      responsiveBreakPoint="1200px"
+      [tableColumns]="headers"
+      [data]="users"
+      (stateChange)="stateClicked($event)"
+    ></assaf-data-table>
+  </assaf-documentation-example-container>
+
+  <!-- Sortable table -->
+  <assaf-documentation-example-container
+    title="Sortable table"
+    [html]="examples.sort.html"
+    [ts]="examples.sort.ts"
+    styleClass="flex flex-col gap-7"
+  >
+    <assaf-data-table
+      [tableColumns]="sortable"
+      [data]="users"
+      (stateChange)="stateClicked($event)"
+    ></assaf-data-table>
+  </assaf-documentation-example-container>
+
+  <!-- General search & dropdown -->
+  <assaf-documentation-example-container
+    title="Table with global search & dropdowns"
+    [html]="examples.globalDrop.html"
+    [ts]="examples.globalDrop.ts"
+    styleClass="flex flex-col gap-7"
+  >
+    <assaf-data-table
+      [tableColumns]="dropdowns"
+      [data]="users"
+      [filterKeys]="['firstName', 'phone']"
+      (stateChange)="stateClicked($event)"
+    >
+      <ng-template #caption let-dataTable>
+        <div class="flex flex-row-reverse">
+          <assaf-data-table-search-input
+            class="flex flex-col"
+            label="Global search"
+            [template]="dataTable"
+          ></assaf-data-table-search-input>
+        </div>
+      </ng-template>
+    </assaf-data-table>
+  </assaf-documentation-example-container>
+
+  <!-- Lazy load data -->
+  <assaf-documentation-example-container
+    title="Lazy loaded table"
+    [html]="examples.lazy.html"
+    styleClass="flex flex-col gap-7"
+    [ts]="examples.lazy.ts"
+  >
+    <!-- For lazy loading to work you need to enable lazyLoad & paginate -->
+    <!-- Then update data array with new content -->
+    <assaf-data-table
+      [tableColumns]="headers"
+      [data]="lazyData"
+      [lazyLoad]="true"
+      [paginate]="true"
+      [rowsCountPerPage]="2"
+      (onLazyLoad)="paginate($event)"
+      (stateChange)="stateClicked($event)"
+      [totalRecords]="totalRecords"
+      [loading]="isLoading"
+    ></assaf-data-table>
+  </assaf-documentation-example-container>
+
+  <!-- Table pipes -->
+  <assaf-documentation-example-container
+    title="Table pipes"
+    [html]="examples.pipes.html"
+    styleClass="flex flex-col gap-7"
+    [ts]="examples.pipes.ts"
+  >
+    <assaf-data-table
+      [tableColumns]="userHeaders"
+      [data]="users"
+      (stateChange)="stateClicked($event)"
+    ></assaf-data-table>
+  </assaf-documentation-example-container>
+</section>

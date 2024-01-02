@@ -1,0 +1,36 @@
+<section class="p-5">
+    <h1 class="text-4xl font-bold mb-4">HttpCalls Services</h1>
+    <p class="text-gray-600">{{initialize.defination}}</p>
+  
+    <!-- Steps  -->
+    <div class="mt-10 mb-10">
+      <h2 class="text-xl font-bold">steps</h2>
+      <ol>
+        <li class="mt-5">
+            <p class="text-gray-600 mb-3">
+              Step 1 / Import the service in your component's module
+            </p>
+            <assaf-documentation-code-block [tsText]="initialize.import">
+            </assaf-documentation-code-block>
+          </li>
+          <li class="mt-5">
+            <p class="text-gray-600 mb-3">
+              Step 2 / inject the service in your Service's constructor
+            </p>
+            <assaf-documentation-code-block [tsText]="initialize.initialize">
+            </assaf-documentation-code-block>
+          </li>
+        <li class="mt-5">
+          <p class="text-gray-600 mb-3">
+            Examples for Use it in your Service
+          </p>
+          <assaf-documentation-code-block [tsText]="initialize.usage">
+          </assaf-documentation-code-block>
+        </li>
+      </ol>
+    </div>
+    <section>
+      <assaf-documentation-http-calls-table></assaf-documentation-http-calls-table>
+    </section>
+  </section>
+  

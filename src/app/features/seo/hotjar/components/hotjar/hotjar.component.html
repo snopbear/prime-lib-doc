@@ -1,0 +1,80 @@
+<section class="p-8">
+  <h1 class="text-4xl font-bold mb-4">Hotjar</h1>
+  <div class="mt-10">
+    <p class="text-gray-600 mb-3">
+      <strong>Hotjar</strong> is a powerful web analytics and feedback tool that
+      allows website owners to understand how their users interact with their
+      site. It provides a range of features, including heatmaps, visitor
+      recordings, conversion funnels, form analysis, feedback polls and surveys,
+      and user testing.
+    </p>
+    <section class="my-3">
+      <h3 class="text-gray-900 mt-4 mb-2 text-xl font-bold">
+        What are its benefits?
+      </h3>
+      <ul class="list-disc ps-4 mb-4">
+        <li class="text-gray-800">
+          <strong>Improved User Experience</strong>: Hotjar provides insight
+          into how users interact with your website, allowing you to identify
+          areas for improvement and optimize the user experience.
+        </li>
+        <li class="text-gray-800">
+          <strong>Increased Conversion Rates</strong>: By understanding how
+          users navigate through your site, you can identify and remove barriers
+          to conversion, leading to increased conversion rates and revenue.
+        </li>
+        <li class="text-gray-800">
+          <strong>Better Customer Understanding</strong>: Hotjar's feedback
+          tools allow you to collect valuable insights from your users,
+          including their opinions, preferences, and pain points. This can help
+          you tailor your products and services to better meet their needs.
+        </li>
+        <li class="text-gray-800">
+          <strong>Faster Problem Resolution:</strong> Hotjar's visitor
+          recordings and heatmaps can help you quickly identify and resolve
+          issues on your website, improving the overall user experience.
+        </li>
+        <li class="text-gray-800">
+          <strong>Cost-Effective</strong>: Hotjar is an affordable web analytics
+          tool that provides a range of features typically found in more
+          expensive tools, making it a cost-effective choice for businesses of
+          all sizes.
+        </li>
+      </ul>
+    </section>
+    <span class="text-red-900 m-3 ms-0 text-xl"
+      >Please follow the next steps to implement <strong>Hotjar</strong> in your
+      project</span
+    >
+    <section>
+      <h3 class="mb-2 font-bold">Step 1 :</h3>
+      <p class="text-gray-800 mb-2">install ngx-hotjar package</p>
+      <assaf-documentation-code-block
+        [otherText]="steps.install"
+      ></assaf-documentation-code-block>
+    </section>
+    <section class="my-3">
+      <header>
+        <h3 class="mb-2 font-bold">Step 2 :</h3>
+        <p class="text-gray-800 mb-2">
+          Add
+          <strong>"NgxHotjarModule, NgxHotjarRouterModule"</strong> modules in
+          <strong>app.module.ts</strong> and <br />
+          Replace YOUR_HOTJAR_SITE_ID with your Hotjar site ID. account's ID
+        </p>
+      </header>
+      <assaf-documentation-code-block [tsText]="steps.import">
+      </assaf-documentation-code-block>
+    </section>
+    <section class="my-3">
+      <header>
+        <h3 class="mb-2 font-bold">Step 3 :</h3>
+        <p class="text-gray-800 mb-2">
+          use <strong>NgxHotjarService</strong> service in your component
+        </p>
+      </header>
+      <assaf-documentation-code-block [tsText]="steps.usage">
+      </assaf-documentation-code-block>
+    </section>
+  </div>
+</section>

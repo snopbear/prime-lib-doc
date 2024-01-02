@@ -1,0 +1,78 @@
+<p-tabView
+  [scrollable]="(_isMobile | async)! <= 425"
+  styleClass="{{ _isMobile.value <= 768 ? 'center-tabview' : '' }}"
+>
+  <!-- Properties -->
+  <p-tabPanel header="Properties" leftIcon="pi pi-cog">
+    <ng-template pTemplate="content">
+      <!-- Datatable -->
+      <h3 class="font-bold text-xl mb-5">DataTable Properties</h3>
+      <assaf-data-table
+        [tableColumns]="_headers"
+        [data]="_properties"
+      ></assaf-data-table>
+
+      <!-- Search input -->
+      <h3 class="font-bold text-xl my-5">Search Input Properties</h3>
+      <assaf-data-table
+        [tableColumns]="_headers"
+        [data]="_searchProperties"
+      ></assaf-data-table>
+    </ng-template>
+  </p-tabPanel>
+
+  <!-- Events -->
+  <p-tabPanel header="Events" leftIcon="pi pi-eject">
+    <ng-template pTemplate="content">
+      <assaf-data-table
+        [tableColumns]="_generalHeaders"
+        [data]="_events"
+      ></assaf-data-table>
+    </ng-template>
+  </p-tabPanel>
+
+  <!-- Interfaces -->
+  <p-tabPanel header="Interfaces" leftIcon="pi-code pi">
+    <ng-template pTemplate="content">
+      <!-- Tablecolumn interface -->
+      <div>
+        <h3 class="font-bold text-xl mb-3">&lt;TableColumn&gt; Interface</h3>
+        <assaf-data-table
+          [tableColumns]="_generalHeaders"
+          [data]="_interfaces.tableColumn"
+        ></assaf-data-table>
+        <p class="text-gray-600 font-bold">* ? indicates optional parameter</p>
+      </div>
+
+      <!-- State interface -->
+      <div class="mt-10">
+        <h3 class="font-bold text-xl mb-3">&lt;State&gt; Interface</h3>
+        <assaf-data-table
+          [tableColumns]="_generalHeaders"
+          [data]="_interfaces.state"
+        ></assaf-data-table>
+        <p class="text-gray-600 font-bold">* ? indicates optional parameter</p>
+      </div>
+
+      <!-- ButtonConfig interface -->
+      <div class="mt-10">
+        <h3 class="font-bold text-xl mb-3">&lt;ButtonConfig&gt; Interface</h3>
+        <assaf-data-table
+          [tableColumns]="_generalHeaders"
+          [data]="_interfaces.buttonConfig"
+        ></assaf-data-table>
+        <p class="text-gray-600 font-bold">* ? indicates optional parameter</p>
+      </div>
+
+      <!-- DropDownConfig interface -->
+      <div class="mt-10">
+        <h3 class="font-bold text-xl mb-3">&lt;DropDownConfig&gt; Interface</h3>
+        <assaf-data-table
+          [tableColumns]="_generalHeaders"
+          [data]="_interfaces.dropdown"
+        ></assaf-data-table>
+        <p class="text-gray-600 font-bold">* ? indicates optional parameter</p>
+      </div>
+    </ng-template>
+  </p-tabPanel>
+</p-tabView>

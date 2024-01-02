@@ -1,0 +1,29 @@
+<section class="m-5">
+  <assaf-documentation-example-container
+    styleClass="flex flex-col gap-5"
+    [html]="examples.htmlMessage"
+    [ts]="examples.tsMessage"
+    title="Display Message"
+  >
+    <assaf-button
+      label="Show Message"
+      (click)="showMeassage()"
+      severity="info"
+    ></assaf-button>
+    <assaf-messages key="keyMessage"></assaf-messages>
+  </assaf-documentation-example-container>
+</section>
+<section class="m-5">
+  <assaf-documentation-example-container
+    styleClass="flex flex-col gap-5"
+    [html]="examples.htmlToast"
+    [ts]="examples.tsToast"
+    title="Display Toast"
+  >
+    <assaf-button
+      label="Show Toast"
+      (click)="showToast()"
+      severity="success"
+    ></assaf-button>
+  </assaf-documentation-example-container>
+</section>

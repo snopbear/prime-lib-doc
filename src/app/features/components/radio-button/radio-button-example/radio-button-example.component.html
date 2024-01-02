@@ -1,0 +1,36 @@
+  <section [formGroup]="form" class="p-5">
+    <!-- Basic use  -->
+    <assaf-documentation-example-container
+      [html]="radioButtonsData.basic.html"
+      [ts]="radioButtonsData.basic.ts"
+      [title]="radioButtonsData.basic.name"
+       styleClass="flex mb-4 gap-4 flex-col"
+    >
+    <section  class="m-auto">
+      <assaf-radio-button
+        (click)="showSelected()"
+        controlName="color"
+        [data]="data"
+        class="radio"
+      ></assaf-radio-button>
+    </section>
+    </assaf-documentation-example-container>
+<!-- Error Handeling -->
+    <assaf-documentation-example-container
+    [html]="radioButtonsData.handelError.html"
+    [ts]="radioButtonsData.handelError.ts"
+    [title]="radioButtonsData.handelError.name"
+     styleClass="flex mb-4 gap-4 flex-col"
+  >
+    <section class="m-auto">
+      <assaf-radio-button
+      [controlErrors]="errors"
+      controlName="ColorWithErrorHandel"
+      [data]="data"
+      class="radio "
+    ></assaf-radio-button>
+    <assaf-button label="Submit" (click)="submitForm()" btnType="submit" ></assaf-button>
+    </section>
+  </assaf-documentation-example-container>
+  </section>
+  

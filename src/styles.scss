@@ -1,1 +1,77 @@
 /* You can add global styles to this file, and also import other style files */
+
+// @tailwind base;
+// @tailwind components;
+// @tailwind utilities;
+
+@import 'tailwindcss/base' layer(tailwindcss);
+@import 'tailwindcss/components' layer(tailwindcss);
+@import 'tailwindcss/utilities' layer(tailwindcss);
+
+
+
+
+@import "./assets/scss/fieldset";
+@import "./assets/scss/tabView";
+@import "./assets/scss/imageUploader";
+@import "./assets/scss/radioButton";
+@import "./assets/scss/badge";
+@import "./assets/scss/dropdown";
+@import "./assets/scss/skeleton";
+@import "./assets/scss/divider";
+@import "./assets/scss/calendar";
+@import "./assets/scss/spinner";
+@import "./assets/scss/documention-layout";
+@import "./assets/scss/chips";
+@import "./assets/scss/tables";
+@import "./assets/scss/phone-number";
+@import "./assets/scss/checkbox";
+@import "./assets/scss/sidebar";
+@import "./assets/scss/progress-bar";
+
+@import 'primeng/resources/themes/lara-light-blue/theme.css';
+@import 'primeng/resources/primeng.css';
+
+
+
+* {
+  // padding: 0;
+  // margin: 0;
+  // box-sizing: border-box;
+}
+
+body,
+app-root {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  font-family: "Quicksand", sans-serif;
+
+}
+
+ul,li{
+  // display: flex;
+  padding:0.5rem;
+  margin: 0.5rem;
+}
+:root {
+  --primary-color: #1d2531;
+  --primary-color-m: #222d3b;
+
+  --secondary-color: #000;
+  --secondary-color-m: #fff;
+
+  --trinary--color: #b4d8f6;
+  --trinary--color-m: #42a5f5;
+
+  --orange-color: #e8a301;
+}
+
+.grid-container {
+  assaf-documentation-code-block {
+    grid-column: span 2;
+  }
+}
+.ngx-lite-video {
+  border-radius: 15px;
+}

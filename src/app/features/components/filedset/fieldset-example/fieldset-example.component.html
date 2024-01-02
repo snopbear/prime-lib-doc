@@ -1,0 +1,9 @@
+<section class="p-5">
+    <div class="col"></div>
+    <ng-container *ngFor="let view of fieldSetData">
+        <assaf-documentation-example-container [title]="view.title" [html]="view.tag" [ts]="view.ts" 
+        styleClass="flex mb-4 gap-4 flex-col">
+            <assaf-fieldset class="flex flex-col" [data]="view.data" styleClass="legend"></assaf-fieldset>
+        </assaf-documentation-example-container>
+    </ng-container>
+</section>

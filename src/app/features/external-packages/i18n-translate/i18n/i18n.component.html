@@ -1,0 +1,72 @@
+<section class="p-7">
+  <h1 class="text-4xl font-bold mb-4">I18N</h1>
+  <p class="text-gray-600">
+    The i18n API allows setting translations globally for the components and
+    integration with translation libraries. Finally, you can use ngx-translate
+    in your Angular project. You have to import TranslateModule.forRoot() in the
+    root NgModule of your application.To be able to use ngx-translate ou have to
+    <span class="text-red-600 mb-3 font-bold"
+      >import TranslateModule.forRoot()
+    </span>
+    in the root NgModule of your application.
+  </p>
+
+  <div class="mt-10">
+    <h2 class="text-xl font-bold">Install</h2>
+    <p class="text-gray-600 mb-3">
+      By default, there is no loader available. You can add translations
+      manually using setTranslation but it is better to use a loader. You can
+      write your own loader, or import an existing one. For example you can use
+      the TranslateHttpLoader that will load translations from files using
+      HttpClient. To use it, you need to install the http-loader package from
+      @ngx-translate:
+    </p>
+    <assaf-documentation-code-block [otherText]="steps.translate">
+    </assaf-documentation-code-block>
+  </div>
+
+  <!-- Download section -->
+  <div class="mt-10">
+    <h2 class="text-xl font-bold">Configuration</h2>
+    <!-- assaf core install -->
+    <div class="mt-5">
+      <p class="text-gray-600 mb-3">
+        Once you've decided which loader to use, you have to setup the
+        TranslateModule to use it. Here is how you would use the
+        TranslateHttpLoader to load translations from "/assets/i18n/[lang].json".
+
+         If you want to configure a custom TranslateLoader while using <strong class="text-red-800">AoT</strong> 
+        compilation or Ionic, you must use an exported function instead of an
+        inline function.
+      </p>
+      <assaf-documentation-code-block [tsText]="steps.configuration">
+      </assaf-documentation-code-block>
+    </div>
+
+    <!-- assaf Translation Files -->
+    <div class="mt-5">
+      <p class="text-gray-600 mb-3">
+       In app.component.ts
+      </p>
+      <assaf-documentation-code-block [tsText]="steps.componentInstllation">
+      </assaf-documentation-code-block>
+    </div>
+      <div class="mt-5">
+      <p class="text-gray-600 mb-3">
+       Usage in html
+      </p>
+      <assaf-documentation-code-block [htmlText]="steps.htmlUseage">
+      </assaf-documentation-code-block>
+    </div>
+
+      <div class="mt-5">
+      <p class="text-gray-600 mb-3">
+       Usage in TS
+      </p>
+      <assaf-documentation-code-block [tsText]="steps.tsUseage">
+      </assaf-documentation-code-block>
+    </div>
+    
+  </div>
+
+</section>

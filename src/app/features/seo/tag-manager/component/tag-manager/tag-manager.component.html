@@ -1,0 +1,83 @@
+<section class="p-8">
+  <h1 class="text-4xl font-bold mb-4">Tag Manager</h1>
+  <div class="mt-10">
+    <p class="text-gray-600 mb-3">
+      Google Tag Manager is a tag management system that allows you to easily
+      add and manage various tracking codes and scripts on your website or
+      mobile app, without the need for manual code changes. It provides a
+      user-friendly interface that allows you to quickly and easily deploy and
+      manage tags, which are snippets of code that track user behavior and send
+      data to third-party tools like Google Analytics, AdWords, and other
+      marketing and analytics platforms.
+    </p>
+    <section class="my-3">
+      <h3 class="text-gray-900 mt-4 mb-2 text-xl font-bold">
+        What are its benefits?
+      </h3>
+      <ul class="list-disc ps-4 mb-4">
+        <li class="text-gray-800">Tracking pageviews and events</li>
+        <li class="text-gray-800">
+          Setting up conversion tracking for advertising campaigns
+        </li>
+        <li class="text-gray-800">
+          Implementing remarketing and advertising tracking pixels
+        </li>
+        <li class="text-gray-800">
+          Integrating with third-party tools and services
+        </li>
+        <li class="text-gray-800">
+          Implementing custom tracking and analytics solutions
+        </li>
+      </ul>
+    </section>
+    <span class="text-red-900 m-3 ms-0 text-xl"
+      >Please follow the next steps to implement <strong>Tag Manager</strong> in
+      your project</span
+    >
+    <section class="my-3">
+      <header>
+        <h3 class="mb-2 font-bold">Step 1 :</h3>
+        <p class="text-gray-800 mb-2">
+          You need to add this Script in <strong>index.html</strong> and make
+          sure that <strong>GTM-XXXX</strong> is your google tag manager
+          account's ID
+        </p>
+      </header>
+      <assaf-documentation-code-block [tsText]="steps.setup">
+      </assaf-documentation-code-block>
+    </section>
+    <section class="my-3">
+      <header>
+        <h3 class="mb-2 font-bold">Step 2 :</h3>
+        <p class="text-gray-800 mb-2">
+          Make your service that manage Google Tag Manager functionality
+        </p>
+      </header>
+      <assaf-documentation-code-block [tsText]="steps.services">
+      </assaf-documentation-code-block>
+    </section>
+    <section class="my-3">
+      <header>
+        <h3 class="mb-2 font-bold">Step 3 :</h3>
+        <p class="text-gray-800 mb-2">
+          use <strong>LogPage </strong>in your shell or your entry point of app
+          for example your <strong>app.component.ts</strong>
+        </p>
+      </header>
+      <assaf-documentation-code-block [tsText]="steps.logPageUage">
+      </assaf-documentation-code-block>
+    </section>
+
+    <section class="my-3">
+      <header>
+        <h3 class="mb-2 font-bold">Step 4 :</h3>
+        <p class="text-gray-800 mb-2">
+          use <strong>logEvent</strong> in any component has any element you
+          need to track.
+        </p>
+      </header>
+      <assaf-documentation-code-block [tsText]="steps.logEventUage">
+      </assaf-documentation-code-block>
+    </section>
+  </div>
+</section>

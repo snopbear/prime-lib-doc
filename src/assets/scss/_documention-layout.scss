@@ -1,0 +1,52 @@
+.side-nav {
+  .p-accordion-header {
+    background-color: var(--primary-color);
+  }
+  .p-accordion-header-text {
+    color: var(--secondary-color-m);
+    font-size: 1rem;
+    padding: 1rem;
+  }
+  .pi-chevron-down:before {
+    color: var(--trinary--color-m);
+
+  }
+}
+
+.route:hover {
+  transition: all 0.5s linear;
+}
+
+.active {
+  background-color: var(--primary-color) !important;
+  border-left: 5px solid var(--trinary--color-m);
+  transition: all 0.1s linear;
+}
+
+assaf-documentation-user-shell {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  assaf-documentation-user-shell {
+    flex-direction: row;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 1px !important;
+  background-color: #f5f5f5;
+  @media (min-width: 768px) {
+    width: 8px;
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #a9a9a9;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+}

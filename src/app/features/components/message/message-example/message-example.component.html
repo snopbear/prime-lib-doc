@@ -1,0 +1,31 @@
+<section class="p-5">
+  <div class="container">
+    <div *ngFor="let message of MessageExamples">
+      <assaf-documentation-example-container
+        title="{{ message.title }}"
+        styleClass="flex mb-4 gap-4 flex-col"
+        html="{{ message.htmlCode }}"
+        ts="{{ message.tsCode }}"
+      >
+        <assaf-messages key="{{ message.key }}" class="m-auto w-3/4"></assaf-messages>
+      </assaf-documentation-example-container>
+    </div>
+    <!-- Button click Message -->
+    <div>
+      <assaf-documentation-example-container
+        title="Button Click Message"
+        html="{{ MessageBtnExample.htmlCode }}"
+        ts="{{ MessageBtnExample.tsCode }}"
+        styleClass="flex mb-4 gap-4 flex-col"
+      >
+        <assaf-button
+          severity="warning"
+          (click)="showMessage()"
+          label="Warn"
+          class="m-auto"
+        ></assaf-button>
+        <assaf-messages key="5"  class="m-auto w-3/4" [closable]="false"></assaf-messages>
+      </assaf-documentation-example-container>
+    </div>
+  </div>
+</section>

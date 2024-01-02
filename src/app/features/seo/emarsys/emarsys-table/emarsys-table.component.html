@@ -1,0 +1,50 @@
+<p-tabView
+  [scrollable]="(_isMobile | async)! <= 425"
+  styleClass="{{ _isMobile.value <= 768 ? 'center-tabview' : '' }}"
+>
+  <!-- Methods -->
+  <p-tabPanel header="Methods" leftIcon="pi pi-cog">
+    <ng-template pTemplate="content">
+      <!-- Datatable -->
+      <h3 class="font-bold text-xl mb-5">EmarsysService Methods</h3>
+      <assaf-data-table
+        [tableColumns]="_headers"
+        [data]="_methods"
+      ></assaf-data-table>
+    </ng-template>
+  </p-tabPanel>
+
+  <!-- Interfaces -->
+  <p-tabPanel header="Interfaces" leftIcon="pi-code pi">
+    <ng-template pTemplate="content">
+      <!-- Tablecolumn interface -->
+      <div>
+        <h3 class="font-bold text-xl mb-3">&lt;CartItem&gt; Interface</h3>
+        <assaf-data-table
+          [tableColumns]="_generalHeaders"
+          [data]="_cartItemInterface"
+        ></assaf-data-table>
+      </div>
+      <div>
+        <h3 class="font-bold text-xl mb-3">&lt;Descriptor&gt; Interface</h3>
+        <assaf-data-table
+          [tableColumns]="_generalHeaders"
+          [data]="_descriptor"
+        ></assaf-data-table>
+      </div>
+    </ng-template>
+  </p-tabPanel>
+  <!-- Events -->
+  <p-tabPanel header="Events" leftIcon="pi-code pi">
+    <ng-template pTemplate="content">
+      <!-- Tablecolumn Events -->
+      <div>
+        <h3 class="font-bold text-xl mb-3">&lt;EmarsysCommand&gt; Events</h3>
+        <assaf-data-table
+          [tableColumns]="_emarsysHeader"
+          [data]="emarsysEvents"
+        ></assaf-data-table>
+      </div>
+    </ng-template>
+  </p-tabPanel>
+</p-tabView>

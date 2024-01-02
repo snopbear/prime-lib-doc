@@ -1,0 +1,11 @@
+<p-tabView>
+    <!-- Methods -->
+    <p-tabPanel header="Methods" leftIcon="pi pi-cog">
+        <ng-template pTemplate="content">
+            <assaf-data-table
+            [tableColumns]="_headers"
+            [data]="_methods"
+        ></assaf-data-table>
+        </ng-template>
+    </p-tabPanel>
+</p-tabView>

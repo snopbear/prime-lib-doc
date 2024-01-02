@@ -1,0 +1,42 @@
+<section class="p-7">
+  <h1 class="text-4xl font-bold mb-4">HTML2Canvas</h1>
+  <p class="text-gray-600">
+    HTML2Canvas is a package that allows you to take "screenshots" of webpages
+    or parts of it, directly on the users browser. The screenshot is based on
+    the DOM (follow this url for more info
+    <a
+      href="https://www.npmjs.com/package/html2canvas?activeTab=readme"
+      target="_blank"
+      class="text-[var(--primary-color)] underline"
+      >https://www.npmjs.com/package/html2canvas</a
+    >)
+  </p>
+
+  <div class="mt-10">
+    <assaf-documentation-code-block [otherText]="install.npm">
+    </assaf-documentation-code-block>
+  </div>
+
+  <div class="mt-10">
+    <p class="text-gray-600 mb-3">
+      To take screenshot of html content firstly provide
+      <span class="text-[var(--orange-color)] font-bold"
+        >HTML element reference</span
+      >
+      for the container element, then convert it to screenshot using code below
+    </p>
+    <assaf-documentation-code-block
+      [tsText]="install.screenshotTS"
+      [htmlText]="install.screenshotHTML"
+    >
+    </assaf-documentation-code-block>
+  </div>
+
+  <div class="mt-10">
+    <p class="text-gray-600 mb-3">
+      To open taken screenshot in print dialog use code below
+    </p>
+    <assaf-documentation-code-block [tsText]="install.printTs">
+    </assaf-documentation-code-block>
+  </div>
+</section>

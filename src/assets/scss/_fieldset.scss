@@ -1,0 +1,14 @@
+.legend{
+    margin-bottom: 1rem;
+    & .p-fieldset-legend{
+        margin-left: 2rem;
+    }
+}
+.col-screen{
+    @media (max-width:1024px) {
+        & assaf-documentation-code-block{
+            grid-column:1 / span 2;
+        }
+        
+    }
+}

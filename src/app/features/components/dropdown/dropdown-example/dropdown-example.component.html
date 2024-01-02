@@ -1,0 +1,103 @@
+<section [formGroup]="form" class="p-5">
+  <header>
+    <h3 class="note text-bold">
+      <span>NOTE</span> : Assaf-Dropdown must implemented inside formGroup.
+    </h3>
+  </header>
+  <ng-container *ngFor="let dropdown of dropdownsTypes">
+    <assaf-documentation-example-container
+      [html]="dropdown.html"
+      [ts]="dropdown.ts || ''"
+      [title]="dropdown.name"
+      styleClass="flex mb-4 gap-4 flex-col"
+    >
+      <p
+        class="note"
+        *ngIf="
+          dropdown.type === 'withFlags' || dropdown.type === 'withRoundedFlags'
+        "
+      >
+        <span>NOTE</span> : Flags is an external Package to use it check
+        installation
+        <a class="underline" [routerLink]="['/external-packages/flag-icons']"
+          >here</a
+        >.
+      </p>
+      <assaf-dropdown
+        styleClass="customDropdown"
+        class="flex flex-col m-auto"
+        *ngIf="
+          dropdown.type !== 'withFlags' &&
+          dropdown.type !== 'withRoundedFlags' &&
+          dropdown.type !== 'withIcons' &&
+          dropdown.type !== 'autoDisplayFirst' &&
+          dropdown.type !== 'handleErrors'
+        "
+        controlName="control"
+        placeholder="Countries"
+        [floatLabel]="dropdown.type !== 'basic'"
+        [autoComplete]="dropdown.type === 'autoComplete'"
+        [multiSelect]="
+          dropdown.type === 'multiselect' || dropdown.type === 'chipSelection'
+        "
+        [enableFilter]="dropdown.type === 'enableFilter'"
+        [showClear]="dropdown.type === 'showClear'"
+        [multiSelectMode]="
+          dropdown.type === 'chipSelection' ? 'chip' : 'template'
+        "
+        [autoDisplayFirst]="dropdown.type === 'autoDisplayFirst'"
+        [data]="data"
+        label="Countries"
+      ></assaf-dropdown>
+      <!-- Dropdown With Flags -->
+      <assaf-dropdown
+        class="flex flex-col m-auto"
+        styleClass="customDropdown"
+        *ngIf="
+          dropdown.type === 'withFlags' || dropdown.type === 'withRoundedFlags'
+        "
+        controlName="control"
+        placeholder="Countries"
+        [floatLabel]="true"
+        mode="text-flag"
+        [roundedFlagIcon]="dropdown.type === 'withRoundedFlags'"
+        [data]="data"
+        label="Countries"
+      ></assaf-dropdown>
+      <!-- Dropdown with icon -->
+      <assaf-dropdown
+        styleClass="customDropdown"
+        class="flex flex-col m-auto"
+        *ngIf="dropdown.type === 'withIcons'"
+        controlName="control"
+        placeholder="Countries"
+        [floatLabel]="true"
+        mode="text-icon"
+        [data]="data"
+        label="Countries"
+      ></assaf-dropdown>
+      <!-- Dropdown with autoDisplayFirst -->
+      <assaf-dropdown
+        styleClass="customDropdown"
+        class="flex flex-col m-auto"
+        *ngIf="dropdown.type === 'autoDisplayFirst'"
+        controlName="control"
+        [autoDisplayFirst]="true"
+        placeholder="undefined"
+        [data]="data"
+      ></assaf-dropdown>
+      <!-- Handel Errors -->
+      <assaf-dropdown
+        styleClass="customDropdown"
+        [controlErrors]="errors"
+        class="flex flex-col m-auto"
+        *ngIf="dropdown.type === 'handleErrors'"
+        controlName="control2"
+        placeholder="Countries"
+        label="Countries"
+        [floatLabel]="true"
+        [data]="data"
+      ></assaf-dropdown>
+    </assaf-documentation-example-container>
+  </ng-container>
+</section>

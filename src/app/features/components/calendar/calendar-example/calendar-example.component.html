@@ -1,0 +1,113 @@
+<section [formGroup]="form" class="p-5">
+  <!-- Calendar Examples -->
+  <ng-container *ngFor="let calendar of calendarExamples">
+    <assaf-documentation-example-container
+      [html]="calendar.html"
+      [title]="calendar.title"
+      [ts]="calendar.ts"
+      styleClass="flex mb-4 gap-4 flex-col"
+    >
+      <assaf-calendar
+        styleClass="customCalendar"
+        class="flex flex-col m-auto"
+        controlName="control"
+        [floatLabel]="calendar.floatLabel!"
+        [readOnly]="calendar.readOnly!"
+        [showWeeks]="calendar.showWeeks!"
+        [showCalendarIcon]="calendar.showCalendarIcon!"
+        [showButtons]="calendar.showButtons!"
+        [label]="calendar.title"
+      ></assaf-calendar>
+    </assaf-documentation-example-container>
+  </ng-container>
+
+  <!-- Calendar Modes -->
+  <ng-container *ngFor="let calendar of caledarModes">
+    <assaf-documentation-example-container
+      [html]="calendar.html"
+      [ts]="calendar.ts"
+      [title]="calendar.title"
+      styleClass="flex mb-4 gap-4 flex-col"
+    >
+      <assaf-calendar
+        styleClass="customCalendar"
+        class="flex flex-col m-auto"
+        controlName="control"
+        [placeholder]="calendar.label"
+        [label]="calendar.label"
+        [floatLabel]="true"
+        [mode]="calendar.mode"
+      ></assaf-calendar>
+    </assaf-documentation-example-container>
+  </ng-container>
+
+  <!-- with min Date -->
+  <assaf-documentation-example-container
+    [html]="calendars.minCalendar.html"
+    [title]="calendars.minCalendar.title"
+    [ts]="calendars.date"
+    styleClass="flex mb-4 gap-4 flex-col"
+  >
+    <assaf-calendar
+      styleClass="customCalendar"
+      class="flex flex-col m-auto"
+      controlName="control"
+      [label]="calendars.minCalendar.label"
+      [minDate]="minDate"
+      [floatLabel]="true"
+      mode="min-max"
+    ></assaf-calendar>
+  </assaf-documentation-example-container>
+  <!-- with max Date -->
+  <assaf-documentation-example-container
+    [html]="calendars.maxCalendar.html"
+    [title]="calendars.maxCalendar.title"
+    [ts]="calendars.date"
+    styleClass="flex mb-4 gap-4 flex-col"
+  >
+    <assaf-calendar
+      styleClass="customCalendar"
+      class="flex flex-col m-auto"
+      controlName="control"
+      [label]="calendars.maxCalendar.label"
+      [maxDate]="maxDate"
+      [floatLabel]="true"
+      mode="min-max"
+    ></assaf-calendar>
+  </assaf-documentation-example-container>
+  <!-- with min max Date -->
+  <assaf-documentation-example-container
+    [html]="calendars.minMax.html"
+    [title]="calendars.minMax.title"
+    [ts]="calendars.date"
+    styleClass="flex mb-4 gap-4 flex-col"
+  >
+    <assaf-calendar
+      styleClass="customCalendar"
+      class="flex flex-col m-auto"
+      controlName="control"
+      [label]="calendars.minMax.label"
+      [maxDate]="maxDate"
+      [minDate]="minDate"
+      [floatLabel]="true"
+      mode="min-max"
+    ></assaf-calendar>
+  </assaf-documentation-example-container>
+
+  <!-- with error handel -->
+  <assaf-documentation-example-container
+    [html]="calendars.errorHandel.html"
+    [title]="calendars.errorHandel.title"
+    [ts]="calendars.errorHandel.ts"
+    styleClass="flex mb-4 gap-4 flex-col"
+  >
+    <assaf-calendar
+      [controlErrors]="errors"
+      styleClass="customCalendar"
+      class="flex flex-col m-auto"
+      controlName="control2"
+      [label]="calendars.errorHandel.title"
+      [floatLabel]="true"
+    ></assaf-calendar>
+  </assaf-documentation-example-container>
+</section>

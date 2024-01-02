@@ -1,0 +1,52 @@
+<section
+  class="bg-trinary-color flex justifiy-center items-center min-h-screen"
+>
+  <!-- component -->
+  <div
+    class="max-w-lg bg-primary-color shadow-2xl rounded-lg mx-auto text-center p-8 pt-12 min-w-[21rem]"
+  >
+    <div class="lg:py-4 lg:px-3 lg:mb-4 w-fit lg:w-full">
+      <a
+        class="text-white flex gap-4 justify-center items-center text-center text-xl font-extrabold"
+        routerLink="/"
+      >
+        <figure class="w-[50px]">
+          <img class="mx-auto" src="assets/image/logo-ico.png" alt="cic-logo" />
+        </figure>
+        <span>Certified IT Consultants</span></a
+      >
+    </div>
+    <h1 class="text-center font-extrabold -mt-3 text-3xl">Login</h1>
+    <div class="container py-5 max-w-md mx-auto">
+      <form [formGroup]="form">
+        <div class="mb-4">
+          <input
+            placeholder="Username"
+            class="shadow appearance-none rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="username"
+            type="text"
+            formControlName="username"
+          />
+        </div>
+        <div class="mb-6">
+          <input
+            placeholder="Password"
+            class="shadow appearance-none rounded w-full py-2 px-3 text-gray-800 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            id="password"
+            type="password"
+            formControlName="password"
+          />
+        </div>
+        <div class="flex items-center justify-center">
+          <button
+            class="bg-trinary--color-m hover:bg-[#06589a] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="submit"
+            (click)="login()"
+          >
+            Sign In
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

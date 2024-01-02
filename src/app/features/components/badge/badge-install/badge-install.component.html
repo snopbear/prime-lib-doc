@@ -1,0 +1,35 @@
+<section class="p-5">
+  <h1 class="text-4xl font-bold mb-4">assaf-Badge</h1>
+  <p class="text-gray-600">
+    Badge is a small status indicator for another element.
+  </p>
+
+  <!-- Imports -->
+  <div class="mt-10">
+    <h2 class="text-xl font-bold">Imports</h2>
+    <div class="mt-5">
+      <p class="text-gray-600 mb-3">
+        In your desired module add the below import:
+      </p>
+      <assaf-documentation-code-block [tsText]="install.import">
+      </assaf-documentation-code-block>
+    </div>
+  </div>
+
+  <!-- Basic usage -->
+  <div class="mt-10 mb-10">
+    <h2 class="text-xl font-bold">Basic usage</h2>
+    <div class="mt-5">
+      <p class="text-gray-600 mb-3">
+        To start using just pass value to the
+        <span class="text-[var(--orange-color)] font-bold">value</span>
+        attribute to be shown
+      </p>
+      <assaf-documentation-code-block [htmlText]="install.htmlUse">
+      </assaf-documentation-code-block>
+    </div>
+  </div>
+
+  <!-- Properties -->
+  <assaf-documentation-badge-table></assaf-documentation-badge-table>
+</section>

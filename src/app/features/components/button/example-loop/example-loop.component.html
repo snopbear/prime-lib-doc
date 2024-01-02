@@ -1,0 +1,18 @@
+<section >
+  <div class="m-auto flex justify-center items-baseline flex-wrap">
+    <ng-container  *ngFor="let button of data; let i = index">
+      <div class="mb-3" (click)="displaySeverity(button.htmlCode!)">
+        <ng-template
+          [ngTemplateOutlet]="template"
+          [ngTemplateOutletContext]="{ $implicit: button }"
+        ></ng-template>
+      </div>
+    </ng-container>
+</div>
+<!-- Html Text -->
+<div class="mt-5">
+  <assaf-documentation-code-block [htmlText]="activeMode">
+  </assaf-documentation-code-block>
+</div>
+
+</section>

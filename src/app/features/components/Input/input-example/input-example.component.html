@@ -1,0 +1,30 @@
+<section class="p-5" [formGroup]="form">
+  <header>
+    <h3>
+      <span class="text-red-600 font-bold">NOTE</span> : Assaf-Input must
+      implemented inside formGroup.
+    </h3>
+  </header>
+  <div class="mt-10" *ngFor="let input of InputExamples">
+    <assaf-documentation-example-container
+      title="{{ input.title }}"
+      [html]="input.htmlCode"
+      styleClass="flex mb-4 gap-4 flex-col"
+    >
+      <assaf-input
+        controlName="{{ input.controlName }}"
+        label="{{ input.label }}"
+        placeholder="{{ input.placeholder }}"
+        [floatLabel]="input.floatLabel!"
+        [toggleMask]="input.toggleMask!"
+        icon="{{ input.icon }}"
+        [iconPos]="input.iconPos!"
+        [passwordFeedback]="input.passwordFeedback!"
+        [type]="input.type!"
+        [size]="input.size!"
+        [controlErrors]="emailErrors"
+        class="flex flex-col m-auto"
+      ></assaf-input>
+    </assaf-documentation-example-container>
+  </div>
+</section>

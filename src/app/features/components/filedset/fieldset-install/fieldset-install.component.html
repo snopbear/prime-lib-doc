@@ -1,0 +1,37 @@
+<section class="p-5">
+  <h1 class="text-4xl font-bold mb-4">Assaf-Fieldset</h1>
+  <p class="text-gray-600">
+    Assaf-Fieldset is a generic component that has all fieldSet & modes
+  </p>
+
+  <!-- Imports -->
+  <div class="mt-10">
+    <h2 class="text-xl font-bold">Imports</h2>
+    <div class="mt-5">
+      <p class="text-gray-600 mb-3">
+        In your desired module add the below import:
+      </p>
+      <assaf-documentation-code-block [tsText]="install.import">
+      </assaf-documentation-code-block>
+    </div>
+  </div>
+
+  <div class="mt-10 mb-10">
+    <h2 class="text-xl font-bold">Basic usage</h2>
+    <div class="mt-5">
+      <p class="text-gray-600 mb-3">
+        To start using fieldset just pass value to
+        <span class="text-[var(--orange-color)] font-bold">data</span>
+        attribute
+      </p>
+      <assaf-documentation-code-block
+        [tsText]="install.tsUse"
+        [htmlText]="install.htmlUse"
+      >
+      </assaf-documentation-code-block>
+    </div>
+  </div>
+
+  <!-- Properties & events -->
+  <assaf-documentation-fieldset-properties></assaf-documentation-fieldset-properties>
+</section>

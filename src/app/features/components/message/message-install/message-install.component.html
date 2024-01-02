@@ -1,0 +1,49 @@
+<section class="p-5">
+  <h1 class="text-4xl font-bold mb-4">Assaf-Messages</h1>
+  <p class="text-gray-600">
+    Messages is a component that shows a message banner with desired color
+  </p>
+
+  <!-- Imports -->
+  <div class="mt-10">
+    <h2 class="text-xl font-bold">Imports</h2>
+    <div class="mt-5">
+      <p class="text-gray-600 mb-3">
+        In your desired module add the below import:
+      </p>
+      <assaf-documentation-code-block [tsText]="_install.import">
+      </assaf-documentation-code-block>
+    </div>
+  </div>
+
+  <div class="mt-5">
+    <p class="text-gray-600 mb-3">
+      In your
+      <span class="text-[var(--orange-color)] font-bold">AppModule</span> add
+      the
+      <span class="text-[var(--orange-color)] font-bold">MessageService</span>
+      to the providers array
+    </p>
+    <assaf-documentation-code-block [tsText]="_install.serviceImport">
+    </assaf-documentation-code-block>
+  </div>
+
+  <!-- Basic usage -->
+  <div class="my-10 mb-10">
+    <h2 class="text-xl font-bold">Basic usage</h2>
+    <div class="mt-5">
+      <p class="text-gray-600 mb-3">
+        To start using assaf-messages you must provide value to
+        <span class="text-[var(--orange-color)] font-bold">key</span> attribute
+      </p>
+      <assaf-documentation-code-block
+        [htmlText]="_install.htmlUse"
+        [tsText]="_install.tsUse"
+      >
+      </assaf-documentation-code-block>
+    </div>
+  </div>
+
+  <!-- Properties & events -->
+ <assaf-documentation-message-table></assaf-documentation-message-table>
+</section>

@@ -1,0 +1,8 @@
+.customSkeleton { padding: 1.5rem;
+    &__headerCard {  margin-bottom: 1rem;}
+    &__footerCard { display: flex; justify-content: space-between; margin-top: 1rem;}
+    &__item { width: 100%;} 
+  }
+.circle { margin-right: 0.5rem;}
+.rectangle { margin-bottom: 0.4rem;}
+

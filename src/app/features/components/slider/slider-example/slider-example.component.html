@@ -1,0 +1,63 @@
+<section class="p-5">
+  <div *ngFor="let slider of SliderExamples">
+    <assaf-documentation-example-container
+      title="{{ slider.title }}"
+      html="{{ slider.htmlCode! }}"
+      ts="{{ slider.tsCode! }}"
+    >
+      <div class="px-5 rounded-md m-auto w-3/4 py-1 mb-2">
+        <div class="w-1/2">
+          <h3
+            class="value my-2 text-blue-500 font-bold"
+            *ngIf="slider.type == 'basicVal'"
+          >
+            {{ basicVal }}
+          </h3>
+          <h3
+            class="value my-2 text-blue-500 font-bold"
+            *ngIf="slider.type == 'stepVal'"
+          >
+            {{ stepVal }}
+          </h3>
+          <h3
+            class="value my-2 text-blue-500 font-bold"
+            *ngIf="slider.type == 'rangeVal'"
+          >
+            {{ rangeVal[0] + " - " + rangeVal[1] }}
+          </h3>
+          <h3
+            class="value my-2 text-blue-500 font-bold"
+            *ngIf="slider.type == 'verticalVal'"
+          >
+            {{ verticalVal }}
+          </h3>
+
+          <assaf-slider
+            [value]="slider.type == 'rangeVal' ? rangeVal : slider.value!"
+            [step]="slider.step!"
+            [range]="slider.type == 'rangeVal' ? true : false"
+            controlName="{{ slider.controlName! }} "
+            [orientation]="slider.orientation!"
+            (valueChange)="newValue($event, slider.type!)"
+            styleClass="mb-6 {{ slider.styleClass! }}"
+          ></assaf-slider>
+        </div>
+      </div>
+    </assaf-documentation-example-container>
+  </div>
+  <!-- Slider with Reactive Form -->
+  <assaf-documentation-example-container
+    title="Reactive forms"
+    html="{{ SliderReactiveExample.htmlCode }}"
+    ts="{{ SliderReactiveExample.tsCode }}"
+  >
+    <div [formGroup]="_form" class="px-2 rounded-md m-auto w-3/4 py-1 mb-2">
+      <div class="w-1/2">
+        <h3 class="value my-2 text-blue-500 font-bold">
+          {{ newValueReactiveForm() }}
+        </h3>
+        <assaf-slider controlName="age" styleClass="mb-6"></assaf-slider>
+      </div>
+    </div>
+  </assaf-documentation-example-container>
+</section>

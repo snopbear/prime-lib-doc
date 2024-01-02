@@ -1,0 +1,21 @@
+<p-tabView
+  [scrollable]="(_isMobile | async)! <= 425"
+  styleClass="{{ _isMobile.value <= 768 ? 'center-tabview' : '' }}"
+>
+  <p-tabPanel header="Properties" leftIcon="pi pi-cog">
+    <ng-template pTemplate="content">
+      <assaf-data-table
+        [tableColumns]="_headers"
+        [data]="properties"
+      ></assaf-data-table
+    ></ng-template>
+  </p-tabPanel>
+  <p-tabPanel header="Events" leftIcon="pi pi-eject">
+    <ng-template pTemplate="content">
+      <assaf-data-table
+        [tableColumns]="_generalHeaders"
+        [data]="_events"
+      ></assaf-data-table>
+    </ng-template>
+  </p-tabPanel>
+</p-tabView>

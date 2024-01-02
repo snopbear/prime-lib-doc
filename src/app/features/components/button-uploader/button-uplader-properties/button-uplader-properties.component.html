@@ -1,0 +1,12 @@
+<!-- Properties & events -->
+<p-tabView [scrollable]="(_isMobile | async)! <= 425"
+styleClass="{{ _isMobile.value <= 768 ? 'center-tabview' : '' }}">
+  <p-tabPanel header="Properties" leftIcon="pi pi-cog">
+    <assaf-data-table [data]="properties" [tableColumns]="propertiesHeaders">
+    </assaf-data-table>
+  </p-tabPanel>
+  <p-tabPanel header="Events" leftIcon="pi pi-eject">
+    <assaf-data-table [data]="events" [tableColumns]="eventsHeaders">
+    </assaf-data-table>
+  </p-tabPanel>
+</p-tabView>

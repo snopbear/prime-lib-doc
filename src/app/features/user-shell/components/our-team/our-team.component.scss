@@ -1,0 +1,29 @@
+.team-card {
+  background-color: #222d3b;
+  color: #fff;
+  padding: 30px 20px;
+  border-radius: 15px;
+  i {
+    transition: all 0.5s ease-in-out;
+  }
+  i:hover {
+    color: #222d3b;
+  }
+  .linkedin {
+    padding: 5px 9px;
+    border-radius: 50%;
+  }
+  .github {
+    padding: 5px 9px;
+    border-radius: 50%;
+  }
+  a {
+    transition: all 0.5s ease-in-out;
+  }
+  a:hover {
+    background-color: var(--trinary--color);
+    i {
+      color: #222d3b;
+    }
+  }
+}

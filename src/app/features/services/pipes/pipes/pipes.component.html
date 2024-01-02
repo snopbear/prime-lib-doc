@@ -1,0 +1,38 @@
+<section class="p-5">
+    <h1 class="text-4xl font-bold mb-4">assaf-Pipes</h1>
+    <p class="text-gray-600">
+        Pipes service is a service that contain many conversion functions that can be used in any component.
+    </p>
+    <!-- Basic usage -->
+    <div class="my-10">
+        <h2 class="text-xl font-bold">Basic Usage</h2>
+        <div class="mt-5">
+          <p class="text-gray-600 mb-3">
+           <b>Step1</b> : Inject the service in your component's constructor
+          </p>
+          <assaf-documentation-code-block [tsText]="install.inject">
+          </assaf-documentation-code-block>
+          <p class="text-gray-600 my-5">
+          <b>Step2</b> : Pipes service can be mainly used in assaf-datatable by providing the desired function to the pipe attribute
+          </p>
+            <assaf-documentation-code-block [tsText]="install.tableExample">
+            </assaf-documentation-code-block>
+          <p class="text-gray-600 my-5">
+            <b>Hint</b> : If you need to use date or decimal function you must to add <b class="underline">DatePipe</b> , <b class="underline">DecimalPipe</b> to AppModule providers Array.
+            </p>
+            <assaf-documentation-code-block [tsText]="install.providers">
+          </assaf-documentation-code-block>
+          <p class="text-gray-600 my-5">
+            <b>Examples</b>
+          </p>
+            <assaf-documentation-code-block [tsText]="install.example">
+            </assaf-documentation-code-block>
+    
+        </div>
+    </div>
+
+    <!-- methods table -->
+    <section>
+    <assaf-documentation-pipes-methods></assaf-documentation-pipes-methods>
+    </section>
+</section>

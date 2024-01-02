@@ -1,0 +1,33 @@
+<section class="p-5">
+  <div class="conatiner">
+    <assaf-documentation-example-container
+    styleClass="flex mb-4 gap-4 flex-col"
+      title="Basic"
+      html="{{ ProfileDropDownExamples.basicHtmlCode }}"
+      ts="{{ ProfileDropDownExamples.basicTsCode }}"
+    >
+      <assaf-profile-dropdown
+      class="flex flex-col m-auto"
+        image="assets/image/aguero.png"
+        label="Aguero"
+        [menuItems]="data"
+        buttonStyleClass="mb-2"
+      ></assaf-profile-dropdown>
+    </assaf-documentation-example-container>
+
+    <assaf-documentation-example-container
+    styleClass="flex mb-4 gap-4 flex-col"
+      title="menu"
+      html="{{ ProfileDropDownExamples.menuHtmlCode }}"
+      ts="{{ ProfileDropDownExamples.menuTsCode }}"
+    >
+      <assaf-profile-dropdown
+      class="flex flex-col m-auto"
+        [menuItems]="menu"
+        icon="pi pi-ellipsis-v"
+        label="Chips"
+        buttonStyleClass="mb-2"
+      ></assaf-profile-dropdown>
+    </assaf-documentation-example-container>
+  </div>
+</section>

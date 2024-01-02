@@ -1,0 +1,843 @@
+<p-tabView>
+  <p-tabPanel header="Designer">
+    <div class="grid-container grid grid-cols-5">
+      <div class="item1 col-span-1">
+        <p-accordion [activeIndex]="0">
+          <p-accordionTab header="Text/Typography">
+            <div
+              class="fields"
+              *ngFor="
+                let item of fieldModels
+                  | categoryfilter : 'category' : 'typoGraphy'
+              "
+            >
+              <div
+                class="p-1 m-1 hover:shadow-lg"
+                [dndDraggable]="item"
+                [dndEffectAllowed]="'copy'"
+                (dndEnd)="onDragEnd($event)"
+              >
+                <i [ngClass]="item.icon" class="float-left"> </i>
+                <h3 class="ml-5">{{ item.label }}</h3>
+              </div>
+            </div>
+          </p-accordionTab>
+          <p-accordionTab header="Header II"> </p-accordionTab>
+          <p-accordionTab header="Header III"> </p-accordionTab>
+        </p-accordion>
+      </div>
+      <div class="item2 col-span-4">
+        <section
+          style="border: 1px dotted #000; height: 100vh"
+          dndDropzone
+          (dndDragover)="onDragover($event)"
+          (dndDrop)="onDrop($event, model.fields)"
+          class="dndDropArea"
+        >
+          <div
+            *ngFor="let item of model.fields; let i = index"
+            (dndStart)="onDragStart($event)"
+            (dndCanceled)="onDragCanceled($event)"
+            (dndMoved)="onDragged(item, model.fields, 'move')"
+            [dndEffectAllowed]="'all'"
+            [dndDraggable]="item"
+          >
+            <div class="row form-group">
+              <div class="col-1">
+                <i class="fa fa-ellipsis-v dndHandle" dndHandle></i>
+              </div>
+              <div>
+                <div *ngIf="item.type == 'hr'">
+                  <hr />
+                </div>
+
+                <div *ngIf="item.type == 'h1'">
+                  <h1>
+                    {{ item.label }}
+                  </h1>
+                </div>
+
+                <div *ngIf="item.type == 'h2'">
+                  <h2>
+                    {{ item.label }}
+                  </h2>
+                </div>
+
+                <div *ngIf="item.type == 'h3'">
+                  <h3>
+                    {{ item.label }}
+                  </h3>
+                </div>
+
+                <div *ngIf="item.type == 'h4'">
+                  <h4>
+                    {{ item.label }}
+                  </h4>
+                </div>
+
+                <div *ngIf="item.type == 'h5'">
+                  <h5>
+                    {{ item.label }}
+                  </h5>
+                </div>
+
+                <div *ngIf="item.type == 'h6'">
+                  <h6>
+                    {{ item.label }}
+                  </h6>
+                </div>
+
+                <div *ngIf="item.type == 'paragraph'">
+                  <p>
+                    {{ item.label }}
+                  </p>
+                </div>
+                <div *ngIf="item.type == 'pre'">
+                  <pre>{{ item.label }}</pre>
+                </div>
+                <div *ngIf="item.type == 'quote'">
+                  <q class="form-text" [attr.relatedTo]="item.relatedTo">{{
+                    item.label
+                  }}</q>
+                </div>
+
+                <div *ngIf="item.type == 'bQuote'">
+                  <blockquote
+                    class="form-text"
+                    [attr.relatedTo]="item.relatedTo"
+                  >
+                    {{ item.label }}
+                  </blockquote>
+                </div>
+
+                <div *ngIf="item.type == 'span'">
+                  <span class="form-text" [attr.relatedTo]="item.relatedTo">
+                    {{ item.label }}
+                  </span>
+                </div>
+
+                <div *ngIf="item.type == 'text'">
+                  <label>{{ item.label }}</label>
+                  <label *ngIf="item.required" class="text-danger">*</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="{{ item.name }}"
+                    placeholder="{{ item.placeholder }}"
+                    [attr.relatedTo]="item.relatedTo"
+                  />
+                </div>
+                <div *ngIf="item.type == 'email'">
+                  <label>{{ item.label }}</label>
+                  <label *ngIf="item.required" class="text-danger">*</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="{{ item.name }}"
+                    placeholder="{{ item.placeholder }}"
+                    [attr.relatedTo]="item.relatedTo"
+                  />
+                </div>
+                <div *ngIf="item.type == 'phone'">
+                  <label>{{ item.label }}</label>
+                  <label *ngIf="item.required" class="text-danger">*</label>
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="{{ item.name }}"
+                    placeholder="{{ item.placeholder }}"
+                    [attr.relatedTo]="item.relatedTo"
+                  />
+                </div>
+                <div *ngIf="item.type == 'number'">
+                  <label>{{ item.label }}</label>
+                  <label *ngIf="item.required" class="text-danger">*</label>
+                  <input
+                    type="number"
+                    Number="true"
+                    class="form-control"
+                    id="{{ item.name }}"
+                    min="{{ item.min }}"
+                    max="{{ item.max }}"
+                    placeholder="{{ item.placeholder }}"
+                    [attr.relatedTo]="item.relatedTo"
+                  />
+                </div>
+                <div *ngIf="item.type == 'date'">
+                  <label>{{ item.label }}</label>
+                  <label *ngIf="item.required" class="text-danger">*</label>
+                  <!-- [bsConfig]="bsConfig" -->
+                  <input
+                    bsDatepicker
+                    readonly
+                    class="form-control"
+                    id="{{ item.name }}"
+                    [attr.relatedTo]="item.relatedTo"
+                  />
+                </div>
+                <div *ngIf="item.type == 'datetime-range'">
+                  <label>{{ item.label }}</label>
+                  <label *ngIf="item.required" class="text-danger">*</label>
+                  <!-- [bsConfig]="bsConfig" -->
+                  <input
+                    bsDaterangepicker
+                    readonly
+                    class="form-control"
+                    id="{{ item.name }}"
+                    [attr.relatedTo]="item.relatedTo"
+                  />
+                </div>
+                <div *ngIf="item.type == 'textarea'">
+                  <label>{{ item.label }}</label>
+                  <label *ngIf="item.required" class="text-danger">*</label>
+                  <textarea
+                    class="form-control"
+                    id="{{ item.name }}"
+                    placeholder="{{ item.placeholder }}"
+                    [attr.relatedTo]="item.relatedTo"
+                  >
+                  </textarea>
+                </div>
+                <div *ngIf="item.type == 'file'">
+                  <label
+                    >{{ item.label }} (File can't be uploaded right now)</label
+                  >
+                  <label *ngIf="item.required" class="text-danger">*</label>
+                  <input
+                    type="file"
+                    class="form-control"
+                    id="{{ item.name }}"
+                    placeholder="{{ item.placeholder }}"
+                    [attr.relatedTo]="item.relatedTo"
+                  />
+                  <small class="form-text text-danger"
+                    >(File can't be uploaded right now)</small
+                  >
+                </div>
+                <div *ngIf="item.type == 'autocomplete'">
+                  <label>{{ item.label }}</label>
+                  <label *ngIf="item.required" class="text-danger">*</label>
+                  <select
+                    class="form-control"
+                    id="{{ item.name }}"
+                    [attr.relatedTo]="item.relatedTo"
+                  >
+                    <option *ngFor="let v of item.values" [value]="v.value">
+                      {{ v.label }}
+                    </option>
+                  </select>
+                  <!-- <small class="form-text text-muted">{{item.description}}</small> -->
+                </div>
+                <div *ngIf="item.type == 'checkbox'">
+                  <label>{{ item.label }}</label>
+                  <label *ngIf="item.required" class="text-danger">*</label>
+                  <div *ngFor="let v of item.values" class="inline-form-group">
+                    <label class="cust-check-bx">
+                      <input
+                        type="checkbox"
+                        [value]="v.value"
+                        name="{{ item.name }}"
+                        (click)="toggleValue(v)"
+                        [attr.relatedTo]="item.relatedTo"
+                      />
+                      {{ v.label }}
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                </div>
+                <div *ngIf="item.type == 'radio'">
+                  <label>{{ item.label }}</label>
+                  <label *ngIf="item.required" class="text-danger">*</label>
+                  <div *ngFor="let v of item.values" class="inline-form-group">
+                    <label class="cust-check-bx">
+                      <input
+                        type="radio"
+                        [value]="v.value"
+                        name="{{ item.name }}"
+                        [attr.relatedTo]="item.relatedTo"
+                      />
+                      {{ v.label }}
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                </div>
+                <div *ngIf="item.type == 'button'" class="btn-cont text-center">
+                  <!-- (click)="submit()" -->
+                  <input
+                    type="{{ item.subtype }}"
+                    value="{{ item.label }}"
+                    class="{{ item.className }}"
+                    id="{{ item.name }}"
+                    [attr.relatedTo]="item.relatedTo"
+                  />
+                </div>
+                <div
+                  *ngIf="item.type == 'button-with-reset'"
+                  class="btn-cont text-center"
+                >
+                  <!-- (click)="submit()" -->
+                  <input
+                    type="{{ item.subtype }}"
+                    value="{{ item.label }}"
+                    class="{{ item.className }}"
+                    id="{{ item.name }}"
+                    [attr.relatedTo]="item.relatedTo"
+                  />
+                  <input
+                    type="{{ item.nestedtype }}"
+                    value="{{ item.sublabel }}"
+                    class="btn btn-link btn-md"
+                    id="{{ item.name }}"
+                    [attr.relatedTo]="item.relatedTo"
+                  />
+                </div>
+              </div>
+              <div style="width: 100px">
+                <i
+                  *ngIf="item.toggle"
+                  (click)="item.toggle = false"
+                  class="fa fa-chevron-up pull-right"
+                ></i>
+                <i
+                  *ngIf="!item.toggle"
+                  (click)="item.toggle = true"
+                  class="fa fa-chevron-down pull-right"
+                ></i>
+                <i
+                  (click)="removeField(i, model)"
+                  class="fa fa-trash pull-right"
+                ></i>
+              </div>
+            </div>
+            <!-- toggle option -->
+            <div *ngIf="item.toggle" class="toggle-Wrapper">
+              <fieldset *ngIf="item.category == 'angular-material'">
+                <legend>Angular Material</legend>
+                <div class="form-group">
+                  <label>Hide required marker</label>
+                  <i
+                    *ngIf="item.hideRequiredMarker"
+                    (click)="item.hideRequiredMarker = false"
+                    class="fa fa-toggle-on red"
+                  ></i>
+                  <i
+                    *ngIf="!item.hideRequiredMarker"
+                    (click)="item.hideRequiredMarker = true"
+                    class="fa fa-toggle-off"
+                  ></i>
+                  <!-- <span class="pull-right ucfirst">{{ item.type }}</span> -->
+                </div>
+
+                <div class="form-group">
+                  <label>Appearance</label>
+                  <div style="display: flex">
+                    <div class="custom-control custom-radio">
+                      <input
+                        id="legacy"
+                        type="radio"
+                        class="custom-control-input"
+                        value="legacy"
+                        name="appearance"
+                        [(ngModel)]="item.appearance"
+                      />
+                      <label class="custom-control-label" for="legacy"
+                        >Legacy</label
+                      >
+                    </div>
+                    &nbsp; &nbsp;
+                    <div class="custom-control custom-radio">
+                      <input
+                        id="standard"
+                        type="radio"
+                        class="custom-control-input"
+                        value="standard"
+                        name="appearance"
+                        [(ngModel)]="item.appearance"
+                      />
+                      <label class="custom-control-label" for="standard"
+                        >Standard</label
+                      >
+                    </div>
+
+                    &nbsp; &nbsp;
+                    <div class="custom-control custom-radio">
+                      <input
+                        id="fill"
+                        type="radio"
+                        class="custom-control-input"
+                        value="fill"
+                        name="appearance"
+                        [(ngModel)]="item.appearance"
+                      />
+                      <label class="custom-control-label" for="fill"
+                        >Fill</label
+                      >
+                    </div>
+
+                    &nbsp; &nbsp;
+                    <div class="custom-control custom-radio">
+                      <input
+                        id="outline"
+                        type="radio"
+                        class="custom-control-input"
+                        value="outline"
+                        name="appearance"
+                        [(ngModel)]="item.appearance"
+                      />
+                      <label class="custom-control-label" for="outline"
+                        >Outline</label
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label>Hint Label</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    [(ngModel)]="item.hintLabel"
+                  />
+                </div>
+
+                <div
+                  class="form-group"
+                  *ngIf="
+                    item.type == 'text-length-material' ||
+                    item.type == 'textarea-length-material'
+                  "
+                >
+                  <label>Max Length</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    [(ngModel)]="item.maxLength"
+                  />
+                </div>
+              </fieldset>
+
+              <fieldset
+                *ngIf="item.type == 'min-max-validation-datepicker-material'"
+              >
+                <legend>Datepicker with min & max validation</legend>
+                <div class="form-group">
+                  <div class="form-group">
+                    <label>Min Date </label>
+
+                    <input
+                      class="form-control"
+                      type="date"
+                      [(ngModel)]="item.minDate"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label>Max Date </label>
+                    <input
+                      class="form-control"
+                      type="date"
+                      [(ngModel)]="item.maxDate"
+                    />
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>General Validations</legend>
+
+                <div
+                  class="form-group"
+                  *ngIf="
+                    item.type == 'button' || item.type == 'button-with-reset'
+                  "
+                >
+                  <label>Button Sizes</label>
+
+                  <div style="display: flex">
+                    <div class="form-group">
+                      <label>Size</label>
+                      <i
+                        *ngIf="item.size"
+                        (click)="item.size = false"
+                        class="fa fa-toggle-on red"
+                      ></i>
+                      <i
+                        *ngIf="!item.size"
+                        (click)="item.size = true"
+                        class="fa fa-toggle-off"
+                      ></i>
+                      <!-- <span class="pull-right ucfirst">{{ item.type }}</span> -->
+                    </div>
+                  </div>
+                  <hr />
+
+                  <label>Button Styles</label>
+                  <div style="display: flex">
+                    &nbsp; &nbsp;
+                    <div class="custom-control custom-radio">
+                      <input
+                        id="primary"
+                        type="radio"
+                        class="custom-control-input"
+                        [value]="
+                          item.size
+                            ? 'btn btn-primary btn-lg'
+                            : 'btn btn-primary btn-md'
+                        "
+                        name="button"
+                        [(ngModel)]="item.className"
+                      />
+                      <label class="custom-control-label" for="primary"
+                        >Primary</label
+                      >
+                    </div>
+
+                    &nbsp; &nbsp;
+                    <div class="custom-control custom-radio">
+                      <input
+                        id="secondary"
+                        type="radio"
+                        class="custom-control-input"
+                        [value]="
+                          item.size
+                            ? 'btn btn-secondary btn-lg'
+                            : 'btn btn-secondary btn-md'
+                        "
+                        name="button"
+                        [(ngModel)]="item.className"
+                      />
+                      <label class="custom-control-label" for="secondary"
+                        >Secondary</label
+                      >
+                    </div>
+
+                    &nbsp; &nbsp;
+                    <div class="custom-control custom-radio">
+                      <input
+                        id="success"
+                        type="radio"
+                        class="custom-control-input"
+                        [value]="
+                          item.size
+                            ? 'btn btn-success btn-lg'
+                            : 'btn btn-success btn-md'
+                        "
+                        name="success"
+                        [(ngModel)]="item.className"
+                      />
+                      <label class="custom-control-label" for="success"
+                        >Success</label
+                      >
+                    </div>
+
+                    &nbsp; &nbsp;
+                    <div class="custom-control custom-radio">
+                      <input
+                        id="info"
+                        type="radio"
+                        class="custom-control-input"
+                        [value]="
+                          item.size
+                            ? 'btn btn-info btn-lg'
+                            : 'btn btn-info btn-md'
+                        "
+                        name="button"
+                        [(ngModel)]="item.className"
+                      />
+                      <label class="custom-control-label" for="info"
+                        >Info</label
+                      >
+                    </div>
+
+                    &nbsp; &nbsp;
+                    <div class="custom-control custom-radio">
+                      <input
+                        id="warning"
+                        type="radio"
+                        class="custom-control-input"
+                        [value]="
+                          item.size
+                            ? 'btn btn-warning btn-lg'
+                            : 'btn btn-warning btn-md'
+                        "
+                        name="button"
+                        [(ngModel)]="item.className"
+                      />
+                      <label class="custom-control-label" for="warning"
+                        >Warning</label
+                      >
+                    </div>
+                    &nbsp; &nbsp;
+                    <div class="custom-control custom-radio">
+                      <input
+                        id="danger"
+                        type="radio"
+                        class="custom-control-input"
+                        [value]="
+                          item.size
+                            ? 'btn btn-danger btn-lg'
+                            : 'btn btn-danger btn-md'
+                        "
+                        name="button"
+                        [(ngModel)]="item.className"
+                      />
+                      <label class="custom-control-label" for="danger"
+                        >Danger</label
+                      >
+                    </div>
+
+                    &nbsp; &nbsp;
+                    <div class="custom-control custom-radio">
+                      <input
+                        id="dark"
+                        type="radio"
+                        class="custom-control-input"
+                        value="btn btn-dark"
+                        [value]="
+                          item.size
+                            ? 'btn btn-dark btn-lg'
+                            : 'btn btn-dark btn-md'
+                        "
+                        name="button"
+                        [(ngModel)]="item.className"
+                      />
+                      <label class="custom-control-label" for="dark"
+                        >Dark</label
+                      >
+                    </div>
+
+                    &nbsp; &nbsp;
+                    <div class="custom-control custom-radio">
+                      <input
+                        id="light"
+                        type="radio"
+                        class="custom-control-input"
+                        [value]="
+                          item.size
+                            ? 'btn btn-light btn-lg'
+                            : 'btn btn-light btn-md'
+                        "
+                        name="button"
+                        [(ngModel)]="item.className"
+                      />
+                      <label class="custom-control-label" for="light"
+                        >Light</label
+                      >
+                    </div>
+
+                    &nbsp; &nbsp;
+                    <div class="custom-control custom-radio">
+                      <input
+                        id="link"
+                        type="radio"
+                        class="custom-control-input"
+                        [value]="
+                          item.size
+                            ? 'btn btn-link btn-lg'
+                            : 'btn btn-link btn-md'
+                        "
+                        name="button"
+                        [(ngModel)]="item.className"
+                      />
+                      <label class="custom-control-label" for="link"
+                        >Link</label
+                      >
+                    </div>
+                  </div>
+                  <hr />
+                </div>
+
+                <div class="form-group">
+                  <label>Required</label>
+                  <i
+                    *ngIf="item.required"
+                    (click)="item.required = false"
+                    class="fa fa-toggle-on red"
+                  ></i>
+                  <i
+                    *ngIf="!item.required"
+                    (click)="item.required = true"
+                    class="fa fa-toggle-off"
+                  ></i>
+                  <!-- <span class="pull-right ucfirst">{{ item.type }}</span> -->
+                </div>
+
+                <div class="form-group">
+                  <label>Label</label>
+
+                  <div class="form-group" *ngIf="item.type != 'pre'">
+                    <input
+                      class="form-control"
+                      type="text"
+                      [(ngModel)]="item.label"
+                    />
+                  </div>
+                  <div class="form-group" *ngIf="item.type == 'pre'">
+                    <textarea
+                      class="form-control"
+                      [(ngModel)]="item.label"
+                      rows="10"
+                      cols="90"
+                    >
+                    </textarea>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Name</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    disabled
+                    [(ngModel)]="item.name"
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Placeholder</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    [(ngModel)]="item.placeholder"
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Regex</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    [(ngModel)]="item.regex"
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Error text</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    [(ngModel)]="item.errorText"
+                  />
+                </div>
+
+                <!-- number -->
+                <div *ngIf="item.type == 'number'" class="row">
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label>Min</label>
+                      <input
+                        class="form-control"
+                        type="text"
+                        [(ngModel)]="item.min"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label>Max</label>
+                      <input
+                        class="form-control"
+                        type="text"
+                        [(ngModel)]="item.max"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- radio || checkbox || autocomplete -->
+                <div
+                  *ngIf="
+                    item.type == 'radio' ||
+                    item.type == 'checkbox' ||
+                    item.type == 'autocomplete' ||
+                    item.type == 'datatable-material'
+                  "
+                >
+                  <div class="row">
+                    <div class="col-5">
+                      <div class="form-group">
+                        <label>Label</label>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="form-group">
+                        <label>Value</label>
+                      </div>
+                    </div>
+                    <div class="col-2">
+                      <div class="form-group">
+                        <label>Action</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    *ngFor="let i of item.values; let valueIndex = index"
+                    class="row"
+                  >
+                    <div class="col-5">
+                      <div class="form-group">
+                        <input
+                          class="form-control"
+                          type="text"
+                          [(ngModel)]="i.label"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="form-group">
+                        <input
+                          class="form-control"
+                          type="text"
+                          [(ngModel)]="i.value"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-2">
+                      <div class="form-group">
+                        <label (click)="item.values.splice(valueIndex, 1)"
+                          >remove</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-5">
+                      <div class="form-group">
+                        <input
+                          class="form-control"
+                          type="text"
+                          [(ngModel)]="value.label"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="form-group">
+                        <input
+                          class="form-control"
+                          type="text"
+                          [(ngModel)]="value.value"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-2">
+                      <div class="form-group">
+                        <label (click)="addValue(item.values)">Add</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+          <!--optional placeholder element for dropzone-->
+          <!--will be removed from DOM on init-->
+          <div class="dndPlaceholder" dndPlaceholderRef></div>
+        </section>
+      </div>
+    </div>
+  </p-tabPanel>
+  <p-tabPanel header="Viewer">
+    <div *ngFor="let item of model.fields; let i = index">
+      <div *ngIf="item.type == 'h1'">
+        <h1>
+          {{ item.label }}
+        </h1>
+      </div>
+    </div>
+  </p-tabPanel>
+</p-tabView>

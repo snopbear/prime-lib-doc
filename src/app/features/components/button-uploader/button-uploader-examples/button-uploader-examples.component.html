@@ -1,0 +1,74 @@
+<form class="p-5">
+  <!-- Buttons Shapes -->
+  <ng-container *ngFor="let uploader of uploaderButtonsShapes">
+    <assaf-documentation-example-container
+      [html]="uploader.html"
+      [title]="uploader.name"
+      styleClass="flex mb-4 gap-4 flex-col"
+    >
+      <assaf-button-uploader
+        (onChange)="showToast($event)"
+        [label]="uploader.name"
+        [isRaised]="uploader.name === 'Raised'"
+        [isRounded]="uploader.name === 'Rounded'"
+        [isOutline]="uploader.name === 'Outline'"
+        [multiple]="uploader.name === 'Multiple'"
+        [isText]="uploader.name === 'Text'"
+        fileType=".pdf"
+        btnIcon="pi-download"
+        class="flex flex-col m-auto"
+      >
+      </assaf-button-uploader>
+    </assaf-documentation-example-container>
+  </ng-container>
+
+  <!-- Buttons Severity -->
+  <section class="mt-10">
+    <assaf-documentation-example-container
+      [html]="severityHTMLcode"
+      title="Severity Uploader Button"
+      styleClass="flex mb-4 gap-4 flex-col"
+    >
+      <section class="flex gap-4 flex-wrap justify-center">
+        <ng-container *ngFor="let uploader of uploaderButtonsSeverity">
+          <assaf-button
+            [isRaised]="true"
+            [label]="uploader.severity"
+            [severity]="uploader.severity"
+            btnIcon="pi-download"
+            (click)="showSeverityCode(uploader.severity)"
+          ></assaf-button>
+        </ng-container>
+      </section>
+    </assaf-documentation-example-container>
+  </section>
+
+  <!-- Buttons Sizes -->
+  <section class="mt-10">
+    <assaf-documentation-example-container
+      [html]="buttonSizeHTMLcode"
+      title="Uploader Button Sizes"
+      styleClass="flex mb-4 gap-4 flex-col"
+    >
+      <section class="flex gap-4 flex-wrap items-baseline justify-center">
+        <ng-container *ngFor="let uploader of uploaderButtonsSizes">
+          <assaf-button
+            *ngIf="uploader.name != 'Normal' && uploader.size"
+            [isRaised]="true"
+            [label]="uploader.name"
+            [size]="uploader.size"
+            btnIcon="pi-download"
+            (click)="showSizeCode(uploader.size)"
+          ></assaf-button>
+          <assaf-button
+            *ngIf="uploader.name == 'Normal'"
+            [isRaised]="true"
+            [label]="uploader.name"
+            btnIcon="pi-download"
+            (click)="showSizeCode('normal')"
+          ></assaf-button>
+        </ng-container>
+      </section>
+    </assaf-documentation-example-container>
+  </section>
+</form>

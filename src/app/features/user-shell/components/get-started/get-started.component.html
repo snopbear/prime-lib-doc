@@ -1,0 +1,109 @@
+<section class="p-7">
+  <h1 class="text-4xl font-bold mb-4">Get Started</h1>
+  <p class="text-gray-600">
+    Follow below steps to install & use assaf prime lib packages
+  </p>
+
+  <div class="mt-10">
+    <p class="text-gray-600 mb-3">
+      To be able to install any of assaf prime lib packages you need a special token
+      to download the package,
+      <span class="text-red-600 font-bold"
+        >please ask your supervisor for the token before applying below
+        steps</span
+      >
+    </p>
+    <p class="text-gray-600 mb-3">
+      In your root project directory create a
+      <span class="text-[var(--orange-color)] font-bold">.npmrc</span> file &
+      place the lines below in the file (replace [token] with token recieved
+      from your supervisor)
+    </p>
+    <!-- <assaf-documentation-code-block [otherText]="steps.npmrc">
+    </assaf-documentation-code-block> -->
+  </div>
+
+  <!-- Download section -->
+  <div class="mt-10">
+    <h2 class="text-xl font-bold">Download</h2>
+    <!-- assaf  core install -->
+    <div class="mt-5">
+      <p class="text-gray-600 mb-3">For installing assaf -core-library:</p>
+      <assaf-documentation-code-block
+        otherText="npm i @assaf prime lib/assaf -core-library"
+      >
+      </assaf-documentation-code-block>
+    </div>
+
+    <!-- assaf  charts install -->
+    <div class="mt-5">
+      <p class="text-gray-600 mb-3">For installing assaf -charts:</p>
+      <assaf-documentation-code-block otherText="npm i @assaf prime lib/assaf -charts">
+      </assaf-documentation-code-block>
+    </div>
+  </div>
+
+  <!-- Import styles section -->
+  <div class="mt-10">
+    <h2 class="text-xl font-bold">Styles</h2>
+
+    <div class="mt-5">
+      <p class="text-red-600 mb-3 font-bold">
+        APPLIED TO assaf -CORE-LIBRARY ONLY
+      </p>
+      <p class="text-gray-600 mb-3">
+        The css dependencies are as follows, Prime Icons, theme of your choice
+        and structural css of components. (follow this url for themes
+        <a
+          href="https://primeng.org/theming#themes"
+          target="_blank"
+          class="text-[var(--primary-color)] underline"
+          >https://primeng.org/theming</a
+        >)
+      </p>
+      <p class="text-gray-600 mb-3">
+        In
+        <span class="text-[var(--orange-color)] font-bold">angular.json</span>
+        file find the styles array and add the following:
+      </p>
+      <assaf-documentation-code-block [tsText]="steps.styles">
+      </assaf-documentation-code-block>
+    </div>
+  </div>
+
+  <!-- Module imports section -->
+  <div class="mt-10">
+    <h2 class="text-xl font-bold">Imports</h2>
+    <div class="mt-5">
+      <p class="text-red-600 mb-3 font-bold">
+        APPLIED TO assaf -CORE-LIBRARY ONLY
+      </p>
+      <p class="text-gray-600 mb-3">
+        In your
+        <span class="text-[var(--orange-color)] font-bold">AppModule</span> file
+        add the following:
+      </p>
+      <assaf-documentation-code-block [tsText]="steps.moduleImports">
+      </assaf-documentation-code-block>
+    </div>
+  </div>
+
+  <!-- Icons section -->
+  <div class="mt-10">
+    <h2 class="text-xl font-bold">Icons</h2>
+    <div class="mt-5">
+      <p class="text-red-600 mb-3 font-bold">
+        APPLIED TO assaf -CORE-LIBRARY ONLY
+      </p>
+      <p class="text-gray-600">
+        Follow this URL for supported list of icons
+        <a
+          href="https://primeng.org/icons"
+          target="_blank"
+          class="text-[var(--primary-color)] underline"
+          >https://primeng.org/icons</a
+        >
+      </p>
+    </div>
+  </div>
+</section>

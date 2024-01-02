@@ -1,0 +1,12 @@
+<div class="flex flex-col h-full">
+  <assaf-divider [label]="title" align="left"></assaf-divider>
+  <div class="{{ styleClass }} h-full max-h-full">
+    <ng-content></ng-content>
+
+    <assaf-documentation-code-block
+      [htmlText]="html"
+      [tsText]="ts"
+      [otherText]="otherText"
+    ></assaf-documentation-code-block>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<section class="p-7">
+  <h1 class="text-4xl font-bold mb-4">Inject Script Tag</h1>
+  <p>
+    The easiest way to add external dependencies to your Angular projects is
+    through <span class="font-bold text-red-600">npm. </span>The second best
+    option is to add <span class="font-bold text-yellow-400">Script</span> tags
+    to the web page that hosts the application. However, that option only works
+    if you have access to the host page. Barring that, you’ll have to load your
+    JavaScript files dynamically.<br />
+    That’s actually fairly easy to do in JavaScript; in Angular, you have to
+    make use of some of its built-in objects to accomplish it. In this tutorial,
+    we’ll learn a couple of strategies for attaching external JS files using a
+    custom service.
+  </p>
+
+  <div class="mt-8">
+    <h1 class="font-extrabold">Step 1:</h1>
+    <p>Create Service</p>
+    <assaf-documentation-code-block [tsText]="steps.stepService">
+    </assaf-documentation-code-block>
+  </div>
+  <div class="mt-8">
+    <h1 class="font-extrabold">Step 2:</h1>
+    <p>Inject Service So Can To Use It And Set Path Json File</p>
+    <assaf-documentation-code-block [tsText]="steps.stepComponet">
+    </assaf-documentation-code-block>
+  </div>
+  <div class="mt-8">
+    <h1 class="font-extrabold">Step 3:</h1>
+    <p>Json File</p>
+    <assaf-documentation-code-block [tsText]="steps.stepJson">
+    </assaf-documentation-code-block>
+  </div>
+</section>

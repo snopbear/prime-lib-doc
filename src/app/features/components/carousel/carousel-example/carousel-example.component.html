@@ -1,0 +1,166 @@
+<section class="p-8">
+  <!-- Basic Carousel -->
+  <assaf-documentation-example-container
+    title="Basic Carousel"
+    [html]="carouselData[0].tag"
+    [ts]="carouselData[0].ts"
+  >
+    <assaf-carousel
+      [data]="images"
+      [numVisible]="4"
+      [numScroll]="2"
+      [responsiveOptions]="responsiveOptions"
+    >
+      <ng-template let-item>
+        <section class="m-6">
+          <figure class="px-2 py-4">
+            <img
+              src="assets/image/{{ item.image }}"
+              [alt]="item.name"
+              class="rounded-md mb-2"
+            />
+            <article class="space-y-1">
+              <h4>{{ item.name }}</h4>
+              <h5 class="text-yellow-400">${{ item.price }}</h5>
+              <h6 [class]="item.inventoryStatus.toLowerCase()">
+                {{ item.inventoryStatus }}
+              </h6>
+            </article>
+          </figure>
+          <section class="flex justify-evenly">
+            <assaf-button severity="success" btnIcon="pi-search"></assaf-button>
+            <assaf-button severity="warning" btnIcon="pi-star-fill"></assaf-button>
+            <assaf-button severity="danger" btnIcon=" pi-cog"></assaf-button>
+          </section></section
+      ></ng-template>
+    </assaf-carousel>
+  </assaf-documentation-example-container>
+
+  <!-- Responsive Carousel -->
+  <assaf-documentation-example-container
+    title="Responsive Carousel"
+    [html]="carouselData[1].tag"
+    [ts]="carouselData[1].ts"
+  >
+    <assaf-carousel
+      [data]="images"
+      [responsiveOptions]="responsiveOptions"
+      [numVisible]="6"
+      [numScroll]="2"
+    >
+      <ng-template let-item>
+        <section class="m-6">
+          <figure class="px-2 py-4">
+            <img
+              src="assets/image/{{ item.image }}"
+              [alt]="item.name"
+              class="rounded-md mb-2"
+            />
+            <article class="space-y-1">
+              <h4>{{ item.name }}</h4>
+              <h5 class="text-yellow-400">${{ item.price }}</h5>
+              <h6 [class]="item.inventoryStatus.toLowerCase()">
+                {{ item.inventoryStatus }}
+              </h6>
+            </article>
+          </figure>
+          <section class="flex justify-evenly">
+            <assaf-button
+              severity="success"
+              btnIcon="pi-search"
+              styleClass="h-[2.5rem] w-[2.5rem]"
+            ></assaf-button>
+            <assaf-button
+              severity="warning"
+              btnIcon="pi-star-fill"
+              styleClass="h-[2.5rem] w-[2.5rem]"
+            ></assaf-button>
+            <assaf-button
+              severity="danger"
+              btnIcon=" pi-cog"
+              styleClass="h-[2.5rem] w-[2.5rem]"
+            ></assaf-button>
+          </section></section
+      ></ng-template>
+    </assaf-carousel>
+  </assaf-documentation-example-container>
+
+  <!-- Autoplay Carousel -->
+  <assaf-documentation-example-container
+    title="Autoplay Carousel"
+    [html]="carouselData[2].tag"
+    [ts]="carouselData[2].ts"
+  >
+    <assaf-carousel
+      [data]="images"
+      [autoplayInterval]="2000"
+      [circular]="true"
+      [showIndicators]="true"
+      [responsiveOptions]="responsiveOptions"
+      [numVisible]="4"
+      [numScroll]="3"
+    >
+      <ng-template let-item>
+        <section class="m-2">
+          <figure class="px-2 py-4">
+            <img
+              src="assets/image/{{ item.image }}"
+              [alt]="item.name"
+              class="rounded-md mb-2"
+            />
+            <article class="space-y-1">
+              <h4>{{ item.name }}</h4>
+              <h5 class="text-yellow-400">${{ item.price }}</h5>
+              <h6 [class]="item.inventoryStatus.toLowerCase()">
+                {{ item.inventoryStatus }}
+              </h6>
+            </article>
+          </figure>
+          <section class="text-center space-x-3">
+            <assaf-button severity="success" btnIcon="pi-search"></assaf-button>
+            <assaf-button severity="warning" btnIcon="pi-star-fill"></assaf-button>
+            <assaf-button severity="danger" btnIcon=" pi-cog"></assaf-button>
+          </section></section
+      ></ng-template>
+    </assaf-carousel>
+  </assaf-documentation-example-container>
+
+  <!-- Vertical Carousel Scrolling -->
+  <assaf-documentation-example-container
+    title="Vertical Scrolling Carousel"
+    [html]="carouselData[3].tag"
+    [ts]="carouselData[3].ts"
+  >
+    <assaf-carousel
+      [data]="images"
+      [numScroll]="1"
+      [numVisible]="1"
+      verticalViewPortHeight="410px"
+      orientation="vertical"
+      [circular]="true"
+    >
+      <ng-template let-item>
+        <section class="lg:w-1/2 mx-auto">
+          <figure class="lg:w-3/5 lg:h-3/4 mx-auto">
+            <img
+              src="assets/image/{{ item.image }}"
+              [alt]="item.name"
+              class="rounded-md w-full"
+            />
+            <article>
+              <h4>{{ item.name }}</h4>
+              <h5 class="text-yellow-400">${{ item.price }}</h5>
+              <h6 [class]="item.inventoryStatus.toLowerCase()">
+                {{ item.inventoryStatus }}
+              </h6>
+            </article>
+          </figure>
+          <section class="text-center space-x-8">
+            <assaf-button severity="success" btnIcon="pi-search"></assaf-button>
+            <assaf-button severity="warning" btnIcon="pi-star-fill"></assaf-button>
+            <assaf-button severity="danger" btnIcon=" pi-cog"></assaf-button>
+          </section></section
+      ></ng-template>
+    </assaf-carousel>
+  </assaf-documentation-example-container>
+</section>

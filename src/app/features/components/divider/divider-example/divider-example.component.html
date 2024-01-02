@@ -1,0 +1,149 @@
+<section class="p-5">
+  <!-- Basic Divider -->
+  <assaf-documentation-example-container
+    title="Basic"
+    [html]="dividerData[0].tag"
+  >
+    <article class="text-center">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae,
+        natus!
+      </p>
+      <assaf-divider></assaf-divider>
+      <p class="mb-2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae,
+        natus!
+      </p>
+      <assaf-divider></assaf-divider>
+      <p class="mb-2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae,
+        natus!
+      </p>
+    </article>
+  </assaf-documentation-example-container>
+
+  <!-- Align Divider with dashed Divider -->
+  <assaf-documentation-example-container
+    title="Align Label with dashed Divider"
+    [html]="dividerData[1].tag"
+  >
+    <article class="text-center">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae,
+        natus!
+      </p>
+      <assaf-divider
+        [align]="dividerData[1].align[0]"
+        [label]="dividerData[1].title[0]"
+        type="dashed"
+      ></assaf-divider>
+      <p class="mb-2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae,
+        natus!
+      </p>
+      <assaf-divider
+        [align]="dividerData[1].align[1]"
+        [label]="dividerData[1].title[1]"
+        type="dashed"
+      ></assaf-divider>
+      <p class="mb-2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae,
+        natus!
+      </p>
+      <assaf-divider
+        [align]="dividerData[1].align[2]"
+        [label]="dividerData[1].title[2]"
+        type="dashed"
+      ></assaf-divider>
+      <p class="mb-2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae,
+        natus!
+      </p>
+    </article>
+  </assaf-documentation-example-container>
+
+  <!-- Contain Icon -->
+  <assaf-documentation-example-container
+    title="Contain Icon"
+    [html]="dividerData[2].tag"
+  >
+    <article class="text-center">
+      <assaf-divider
+        label="Icon"
+        icon="pi-user"
+        styleClass="title-style"
+        [align]="'center'"
+        iconPos="right"
+        [mode]="'icon'"
+      ></assaf-divider>
+      <p class="mb-2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae,
+        natus!
+      </p>
+    </article>
+  </assaf-documentation-example-container>
+
+  <!-- Contain Badge -->
+  <assaf-documentation-example-container
+    title="Contain Badge"
+    [html]="dividerData[3].tag"
+  >
+    <article class="text-center">
+      <assaf-divider
+        label="Badge"
+        [mode]="'badge'"
+        [align]="'right'"
+      ></assaf-divider>
+      <p class="mb-2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae,
+        natus!
+      </p>
+    </article>
+  </assaf-documentation-example-container>
+
+  <!-- Contain Badge -->
+  <assaf-documentation-example-container
+    title="Contain Button"
+    [html]="dividerData[4].tag"
+  >
+    <article class="text-center">
+      <assaf-divider mode="custom" [align]="'center'">
+        <assaf-button
+          btnIcon="pi-copy"
+          severity="success"
+          label="Button"
+        ></assaf-button>
+      </assaf-divider>
+      <p class="mb-2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae,
+        natus!
+      </p>
+    </article>
+  </assaf-documentation-example-container>
+
+  <!-- Vertical divider -->
+  <assaf-documentation-example-container
+    title="Vertical Divider"
+    [html]="dividerData[5].tag"
+  >
+    <article class="flex mb-4 mx-2">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae,
+        natus! Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        Pariatur, dignissimos.
+      </p>
+      <assaf-divider layout="vertical" label="or"></assaf-divider>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae,
+        natus! Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        Pariatur, dignissimos.
+      </p>
+      <assaf-divider layout="vertical" label="or"></assaf-divider>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae,
+        natus! Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        Pariatur, dignissimos.
+      </p>
+    </article>
+  </assaf-documentation-example-container>
+</section>

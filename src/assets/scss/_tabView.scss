@@ -1,0 +1,41 @@
+.p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+  color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.p-tabview .p-tabview-nav li .p-tabview-nav-link:not(.p-disabled):focus {
+  box-shadow: inset 0 0 0 0.09rem var(--secondary-color-m) !important;
+}
+
+.p-tabview .p-tabview-panels {
+  padding: 1.25rem 0;
+}
+
+.p-tabview .p-tabview-nav-btn.p-link {
+  color: var(--primary-color) !important;
+}
+
+.center-tabview {
+  .p-tabview-nav {
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 1280px) {
+  .code-tabview {
+    .p-tabview-panel {
+      max-width: 100%;
+      overflow-x: scroll;
+      padding-bottom: 1rem;
+    }
+  }
+}
+
+.solidTabView {
+  .p-tabview-nav {
+    justify-content: space-between;
+  }
+  .p-tabview-left-icon {
+    display: none;
+  }
+}
